@@ -1,4 +1,4 @@
-package com.example.pharmacy_manager;
+package com.example.pharmma;
 
 public class Product {
     private int id;

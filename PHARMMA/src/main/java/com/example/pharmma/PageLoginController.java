@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.pharmacy_manager.PageLogin.jobAccount;
+import static com.example.pharmma.PageLogin.jobAccount;
 import static javax.swing.JFrame.*;
 
 
