@@ -9,11 +9,11 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class App extends Application {
     double x,y = 0;
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PHARMMA.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("PHARMMA.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 984, 665);
         AnchorPane root= new AnchorPane();
         stage.initStyle(StageStyle.UNDECORATED);
