@@ -62,7 +62,7 @@ public class ProductController implements Initializable {
     @FXML
     private TableColumn<Product, String> colExpDate;
 
-    private boolean notEmpty = false;
+    private int tester = 0;
 
 
 
@@ -73,24 +73,28 @@ public class ProductController implements Initializable {
         ProductDaoImpl.addProduct(textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
         showProducts();
         clearFields();
-        notEmpty = true;
+        PageStockController.fillOutOfStockLabel();
+        tester ++;
     }
 
     @FXML
     public void updateProductPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
+        if(tester != 0){
             ProductDaoImpl.updateProductById(Integer.parseInt(textIdProd.getText()), textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
             showProducts();
+            PageStockController.fillOutOfStockLabel();
             clearFields();
         }
     }
 
     @FXML
     public void deleteProductPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
+        if(tester != 0){
             ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProd.getText()));
             showProducts();
+            PageStockController.fillOutOfStockLabel();
             clearFields();
+            tester --;
         }
     }
 
@@ -140,4 +144,3 @@ public class ProductController implements Initializable {
 
     }
 }
-

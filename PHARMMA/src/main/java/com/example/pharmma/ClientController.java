@@ -64,7 +64,7 @@ public class ClientController implements Initializable {
     @FXML
     private TableColumn<Client, Integer> colPhoneNbr;
 
-    private boolean notEmpty = false;
+    private int tester = 0;
 
 
 
@@ -75,12 +75,12 @@ public class ClientController implements Initializable {
         ClientDaoImpl.addClient(textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
         showClients();
         clearFields();
-        notEmpty = true;
+        tester++;
     }
 
     @FXML
     public void updateClientPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
+        if(tester != 0){
             ClientDaoImpl.updateClientById(Integer.parseInt(textId.getText()), textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
             showClients();
             clearFields();
@@ -89,10 +89,11 @@ public class ClientController implements Initializable {
 
     @FXML
     public void deleteClientPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
+        if(tester != 0){
             ClientDaoImpl.deleteClientById(Integer.parseInt(textId.getText()));
             showClients();
             clearFields();
+            tester --;
         }
     }
 
@@ -143,4 +144,3 @@ public class ClientController implements Initializable {
 
     }
 }
-
