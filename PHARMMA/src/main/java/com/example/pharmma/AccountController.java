@@ -1,5 +1,6 @@
 package com.example.pharmma;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
@@ -17,75 +18,59 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-public class AccountController implements Initializable {
+public class AccountController  {
 
 
 
     @FXML
-    private TextField textIdAcc;
+   private TextField textIdAcc;
 
     @FXML
-    private TextField textNameAcc;
+   private TextField textNameAcc;
 
     @FXML
-    private TextField textLastNameAcc;
+   private TextField textLastNameAcc;
 
     @FXML
-    private TextField textJob;
+   private TextField textJob;
 
     @FXML
-    private TextField textUsername;
+   private TextField textUsername;
 
     @FXML
     private TextField textPassword;
 
-
-    // zid les bouttons lahna idha tess7a9
-    //.
-    //.
-    //.
-    //.
-
-
-
-
     @FXML
     private TableView<Account> tableAccounts;
-
-
     @FXML
     private TableColumn<Account, Integer> colId;
-
     @FXML
     private TableColumn<Account, String> colNameAcc;
     @FXML
     private TableColumn<Account, String> colLastNameAcc;
-
     @FXML
     private TableColumn<Account, String> colJob;
-
     @FXML
     private TableColumn<Account, String> colUsername;
-
     @FXML
     private TableColumn<Account, String> colPassword;
+    @FXML
+    private Button btnAdd;
 
     private boolean notEmpty = false;
+
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-
-
-
-
-
+    private AnchorPane rootpane;
 
     @FXML
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -95,8 +80,36 @@ public class AccountController implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
+    public void switchToClients(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Clients.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToFinances(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Finances.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToSTOCK(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("STOCK.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void AddButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("AddClient.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
-
+        }
 
     @FXML
     public void addAccountPerformed(ActionEvent actionEvent) {
@@ -106,31 +119,29 @@ public class AccountController implements Initializable {
         notEmpty = true;
     }
 
-    @FXML
-    public void updateAccountPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
-            AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-            showAccounts();
-            clearFields();
-        }
-    }
 
-    @FXML
-    public void deleteClientPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
-            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
-            showAccounts();
-            clearFields();
-        }
-    }
+    //@FXML
+    //public void updateAccountPerformed(ActionEvent actionEvent) {
+      //  if(notEmpty){
+        //    AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+          //  showAccounts();
+            //clearFields();
+        //}
+    //}
+
+    //@FXML
+    //public void deleteClientPerformed(ActionEvent actionEvent) {
+      //  if(notEmpty){
+        //    AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
+          //  showAccounts();
+            //clearFields();
+        //}
+    //}
 
     @FXML
     public void clearFields(ActionEvent actionEvent) {
         clearFields();
     }
-
-
-
 
     public void showAccounts(){
         ObservableList<Account> accountsList = AccountDaoImpl.getAccounts();
@@ -157,7 +168,7 @@ public class AccountController implements Initializable {
 
 
 
-    @Override
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showAccounts();
     }

@@ -18,12 +18,13 @@ public class App extends Application {
         AnchorPane root= new AnchorPane();
         stage.initStyle(StageStyle.UNDECORATED);
 
+
         // move around
-        root.setOnMousePressed(evt ->{
+        root.setOnMousePressed(evt->{
             x = evt.getSceneX();
             y = evt.getSceneY();
         });
-        root.setOnMouseDragged(evt ->{
+        root.setOnMouseDragged(evt->{
             stage.setX(evt.getScreenX()- x);
             stage.setY(evt.getScreenY()- y);
 
