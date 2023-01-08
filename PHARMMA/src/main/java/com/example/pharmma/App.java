@@ -16,7 +16,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("PHARMMA.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 984, 665);
         AnchorPane root= new AnchorPane();
-        stage.initStyle(StageStyle.UNDECORATED);
+       // stage.initStyle(StageStyle.UNDECORATED);
 
 
         // move around

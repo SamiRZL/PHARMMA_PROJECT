@@ -70,7 +70,7 @@ public class AccountController  {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private AnchorPane rootpane;
+
 
     @FXML
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -103,12 +103,11 @@ public class AccountController  {
     }
     @FXML
     public void AddButton(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("AddClient.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddClient.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
         stage.show();
-
         }
 
     @FXML
