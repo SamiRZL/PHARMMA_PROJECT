@@ -22,45 +22,53 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-public class AccountController  {
+
+
+
+public class AccountController implements Initializable {
+
+
+
+
+
+   // @FXML
+   // private static TextField textIdAcc;
+
+    @FXML
+    private  TextField textNameAcc;
+
+    @FXML
+    private  TextField textLastNameAcc;
+
+    @FXML
+    private  TextField textJob;
+
+    @FXML
+    private  TextField textUsername;
+
+    @FXML
+    private  TextField textPassword;
 
 
 
     @FXML
-   private TextField textIdAcc;
-
+    private  TableView<Account> tableAccounts;
     @FXML
-   private TextField textNameAcc;
-
+    private  TableColumn<Account, Integer> colId;
     @FXML
-   private TextField textLastNameAcc;
-
+    private  TableColumn<Account, String> colNameAcc;
     @FXML
-   private TextField textJob;
-
+    private  TableColumn<Account, String> colLastNameAcc;
     @FXML
-   private TextField textUsername;
-
+    private  TableColumn<Account, String> colJob;
     @FXML
-    private TextField textPassword;
-
+    private  TableColumn<Account, String> colUsername;
     @FXML
-    private TableView<Account> tableAccounts;
-    @FXML
-    private TableColumn<Account, Integer> colId;
-    @FXML
-    private TableColumn<Account, String> colNameAcc;
-    @FXML
-    private TableColumn<Account, String> colLastNameAcc;
-    @FXML
-    private TableColumn<Account, String> colJob;
-    @FXML
-    private TableColumn<Account, String> colUsername;
-    @FXML
-    private TableColumn<Account, String> colPassword;
+    private  TableColumn<Account, String> colPassword;
     @FXML
     private Button btnAdd;
 
@@ -70,6 +78,8 @@ public class AccountController  {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+
 
 
     @FXML
@@ -108,15 +118,36 @@ public class AccountController  {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-        }
+    }
+
+
+
+
 
     @FXML
     public void addAccountPerformed(ActionEvent actionEvent) {
         AccountDaoImpl.addAccount(textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-        showAccounts();
         clearFields();
-        notEmpty = true;
+        stage.close();
+        showAccounts();
+
+
     }
+
+    public  void clearFields(){
+        textNameAcc.setText(null);
+        textLastNameAcc .setText(null);
+        textJob.setText(null);
+        textUsername.setText(null);
+        textPassword.setText(null);
+
+
+    }
+
+
+
+
+
 
 
     //@FXML
@@ -137,12 +168,9 @@ public class AccountController  {
         //}
     //}
 
-    @FXML
-    public void clearFields(ActionEvent actionEvent) {
-        clearFields();
-    }
 
-    public void showAccounts(){
+
+    public  void showAccounts(){
         ObservableList<Account> accountsList = AccountDaoImpl.getAccounts();
         tableAccounts.setItems(accountsList);
         colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
@@ -153,34 +181,26 @@ public class AccountController  {
         colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
     }
 
-    @FXML
-    public void showAccountsById(ActionEvent actionEvent){
-        ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAcc.getText()));
-        tableAccounts.setItems(accountsList);
-        colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
-        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("Name"));
-        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("LastName"));
-        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("Job"));
-        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("Username"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
-    }
+    //@FXML
+    //public void showAccountsById(ActionEvent actionEvent){
+        //ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAcc.getText()));
+        //tableAccounts.setItems(accountsList);
+        //colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
+        //colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("Name"));
+        //colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("LastName"));
+        //colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("Job"));
+        //colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("Username"));
+        //colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
+    //}
 
 
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showAccounts();
+        //showAccounts();
     }
 
 
-    public void clearFields(){
-        textNameAcc.setText(null);
-        textLastNameAcc .setText(null);
-        textJob.setText(null);
-        textUsername.setText(null);
-        textPassword.setText(null);
 
-
-    }
 }
 
