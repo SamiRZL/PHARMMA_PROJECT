@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="16537168-9a81-42ef-b018-ed13977617df">
-      <console name="MySQL Connection" type="STANDARD" schema="mysql" session="Main" />
+      <console name="MySQL Connection" type="STANDARD" schema="mysql" session="Main"><![CDATA[select * from clientDB.account;]]></console>
       <console name="MySQL connection" type="STANDARD" schema="clientDB" session="Main" />
     </connection>
   </component>
@@ -25,6 +25,9 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="16537168-9a81-42ef-b018-ed13977617df" dataset="clientDB.account" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -517,5 +520,8 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
   </component>
 </project>
