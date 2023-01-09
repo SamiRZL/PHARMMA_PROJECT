@@ -132,6 +132,7 @@
             <TableView fx:id="tableAccounts" layoutX="22.0" layoutY="248.0" prefHeight="396.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@../../../css/style.css">
                <columns>
                   <TableColumn fx:id="colId" prefWidth="102.0" style="-fx-background-color: #FFFFFF;" text="ID" />
+
                   <TableColumn fx:id="colNameAcc" prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="NAME" />
                   <TableColumn fx:id="colLastNameAcc" prefWidth="115.0" style="-fx-background-color: #FFFFFF;" text="LAST NAME" />
                   <TableColumn fx:id="colJob" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" text="JOB" />
@@ -140,6 +141,7 @@
                </columns>
             </TableView>
             <Button fx:id="btnAdd" layoutX="405.0" layoutY="153.0" mnemonicParsing="false" onAction="#AddButton" prefHeight="38.0" prefWidth="35.0" styleClass="button4" text="+">
+
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

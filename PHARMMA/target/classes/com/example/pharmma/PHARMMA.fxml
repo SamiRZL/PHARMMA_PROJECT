@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="984.0" style="-fx-background-color: #FBF4F9;" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmma.SceneController">
+<AnchorPane fx:id="rootpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="984.0" style="-fx-background-color: #FBF4F9;" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmma.AccountController">
    <children>
       <VBox layoutX="172.0" prefHeight="665.0" prefWidth="90.0" style="-fx-background-color: #00BFA6; -fx-background-radius: 90;" />
       <VBox prefHeight="665.0" prefWidth="223.0" style="-fx-background-color: #00BFA6;">
@@ -31,7 +31,7 @@
                   </Text>
                </children>
             </Pane>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="68.0" prefWidth="247.0" style="-fx-background-radius: 30;" stylesheets="" text="Profile" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="68.0" prefWidth="247.0" style="-fx-background-radius: 30;" stylesheets="" text="Profile" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -105,7 +105,7 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToStock" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Stock" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToSTOCK" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Stock" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -128,17 +128,17 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <TableView layoutX="22.0" layoutY="184.0" prefHeight="460.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@../../../css/style.css">
+            <TableView fx:id="tableAccounts" layoutX="22.0" layoutY="184.0" prefHeight="460.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@../../../css/style.css">
               <columns>
-                <TableColumn prefWidth="102.0" style="-fx-background-color: #FFFFFF;" text="ID" />
-                  <TableColumn prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="NAME" />
-                  <TableColumn prefWidth="115.0" style="-fx-background-color: #FFFFFF;" text="LAST NAME" />
-                  <TableColumn prefWidth="100.0" style="-fx-background-color: #FFFFFF;" text="JOB" />
-                  <TableColumn prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="USERNAME" />
-                  <TableColumn prefWidth="131.0" style="-fx-background-color: #FFFFFF;" text="PASSWORD" />
+                <TableColumn fx:id="colId" prefWidth="102.0" style="-fx-background-color: #FFFFFF;" text="ID" />
+                  <TableColumn fx:id="colNameAcc" prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="NAME" />
+                  <TableColumn fx:id="colLastNameAcc" prefWidth="115.0" style="-fx-background-color: #FFFFFF;" text="LAST NAME" />
+                  <TableColumn fx:id="colJob" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" text="JOB" />
+                  <TableColumn fx:id="colUsername" prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="USERNAME" />
+                  <TableColumn fx:id="colPassword" prefWidth="131.0" style="-fx-background-color: #FFFFFF;" text="PASSWORD" />
               </columns>
             </TableView>
-            <Button layoutX="37.0" layoutY="111.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="132.0" styleClass="button4" text="Add Profile">
+            <Button fx:id="btnAdd" layoutX="37.0" layoutY="111.0" mnemonicParsing="false" onAction="#AddButton" prefHeight="47.0" prefWidth="132.0" styleClass="button4" text="Add Profile">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
