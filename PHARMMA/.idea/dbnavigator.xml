@@ -2,9 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-
-    <value-preview-text-wrapping value="true" />
-
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -18,7 +16,6 @@
       <console name="MySQL Connection" type="STANDARD" schema="mysql" session="Main" />
       <console name="MySQL connection" type="STANDARD" schema="clientDB" session="Main" />
     </connection>
-
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
@@ -26,11 +23,9 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
-
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="16537168-9a81-42ef-b018-ed13977617df" dataset="clientDB.account" active-filter-id="" />
   </component>
-
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
@@ -45,9 +40,6 @@
           <config-type value="BASIC" />
           <database-version value="8.0" />
           <driver-source value="EXTERNAL" />
-
-        
-      
           <driver-library value="$USER_HOME$/Downloads/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar" />
           <driver value="com.mysql.cj.jdbc.Driver" />
           <url-type value="DATABASE" />
@@ -253,7 +245,6 @@
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
-
           <content-type name="Java" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />

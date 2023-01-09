@@ -111,20 +111,14 @@ public class AccountController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    public void AddButton(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddClient.fxml"));
-        Parent root = (Parent)fxmlLoader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
+
 
     @FXML
     public void addAccountPerformed(ActionEvent actionEvent) throws IOException {
 
         AccountDaoImpl.addAccount(textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
         clearFields();
+        showAccounts();
 
 
     }
