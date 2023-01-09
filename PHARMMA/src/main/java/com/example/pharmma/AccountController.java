@@ -56,19 +56,19 @@ public class AccountController implements Initializable {
 
 
     @FXML
-    private  TableView<Account> tableAccounts;
+    private static TableView<Account> tableAccounts;
     @FXML
-    private  TableColumn<Account, Integer> colId;
+    private static TableColumn<Account, Integer> colId;
     @FXML
-    private  TableColumn<Account, String> colNameAcc;
+    private static TableColumn<Account, String> colNameAcc;
     @FXML
-    private  TableColumn<Account, String> colLastNameAcc;
+    private static TableColumn<Account, String> colLastNameAcc;
     @FXML
-    private  TableColumn<Account, String> colJob;
+    private static TableColumn<Account, String> colJob;
     @FXML
-    private  TableColumn<Account, String> colUsername;
+    private static TableColumn<Account, String> colUsername;
     @FXML
-    private  TableColumn<Account, String> colPassword;
+    private static TableColumn<Account, String> colPassword;
     @FXML
     private Button btnAdd;
 
@@ -114,7 +114,7 @@ public class AccountController implements Initializable {
     @FXML
     public void AddButton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddClient.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        Parent root = (Parent)fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
@@ -124,25 +124,8 @@ public class AccountController implements Initializable {
 
 
 
-    @FXML
-    public void addAccountPerformed(ActionEvent actionEvent) {
-        AccountDaoImpl.addAccount(textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-        clearFields();
-        stage.close();
-        showAccounts();
 
 
-    }
-
-    public  void clearFields(){
-        textNameAcc.setText(null);
-        textLastNameAcc .setText(null);
-        textJob.setText(null);
-        textUsername.setText(null);
-        textPassword.setText(null);
-
-
-    }
 
 
 
@@ -170,7 +153,7 @@ public class AccountController implements Initializable {
 
 
 
-    public  void showAccounts(){
+    public static void showAccounts(){
         ObservableList<Account> accountsList = AccountDaoImpl.getAccounts();
         tableAccounts.setItems(accountsList);
         colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
@@ -198,6 +181,8 @@ public class AccountController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //showAccounts();
+
+
     }
 
 
