@@ -153,7 +153,7 @@ public class AccountController implements Initializable {
 
 
 
-    //@FXML
+    @FXML
     //public void updateAccountPerformed(ActionEvent actionEvent) {
       //  if(notEmpty){
         //    AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
