@@ -47,8 +47,7 @@ public class AccountController implements Initializable {
 
 
 
-    @FXML
-    private TextField textIdAcc;
+
 
     @FXML
     private TextField textNameAcc;
@@ -83,6 +82,9 @@ public class AccountController implements Initializable {
 
     @FXML
     private Button btnDelete;
+
+    @FXML
+    private Button btnUpdate;
 
     private int tester = 0;
 
@@ -148,17 +150,17 @@ public class AccountController implements Initializable {
     }
 
 
-    public void tester(){
-        if (tester == 0){
-            btnDelete.setDisable(true);
-        }
-    }
+   // public void tester(){
+       // if (tester == 0){
+       //     btnDelete.setDisable(true);
+      //  }
+   // }
 
 
     @FXML
     public void updateAccountPerformed(ActionEvent actionEvent) {
         if(tester != 0){
-            AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+            AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUpdate.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
             showAccounts();
             clearFields();
         }
@@ -166,7 +168,7 @@ public class AccountController implements Initializable {
 
     @FXML
     public void deleteAccountPerformed(ActionEvent actionEvent) {
-            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
+            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAccDelete.getText()));
             showAccounts();
             clearFields();
             tester--;
@@ -202,7 +204,7 @@ public class AccountController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showAccounts();
-        tester();
+        //tester();
 
 
     }

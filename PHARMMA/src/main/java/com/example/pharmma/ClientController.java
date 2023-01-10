@@ -22,12 +22,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-public class ClientController {
+public class ClientController implements Initializable {
 
 
 
     @FXML
-    private TextField textId;
+    private TextField textIdCltDelete;
+
+
+    @FXML
+    private TextField textIdCltSearch;
+
+    @FXML
+    private TextField textIdCltUp;
+
+
 
     @FXML
     private TextField textName;
@@ -43,8 +52,10 @@ public class ClientController {
 
     @FXML
     private TableView<Client> tableClients;
+
     @FXML
-    private Button btnAdd;
+    private Button btnDelete;
+
 
     @FXML
     private TableColumn<Client, Integer> colId;
@@ -60,7 +71,7 @@ public class ClientController {
     @FXML
     private TableColumn<Client, Integer> colPhoneNbr;
 
-    private Button btnDelete;
+
 
     private int tester = 0;
 
@@ -71,11 +82,11 @@ public class ClientController {
 
 
 
-    public void tester(){
-        if (tester == 0){
-            btnDelete.setDisable(true);
-        }
-    }
+    //public void tester(){
+       // if (tester == 0){
+       //     btnDelete.setDisable(true);
+      //  }
+   // }
 
     @FXML
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -121,14 +132,14 @@ public class ClientController {
 
     @FXML
     public void updateClientPerformed(ActionEvent actionEvent) {
-            ClientDaoImpl.updateClientById(Integer.parseInt(textId.getText()), textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
+            ClientDaoImpl.updateClientById(Integer.parseInt(textIdCltUp.getText()), textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
             showClients();
             clearFields();
     }
 
     @FXML
     public void deleteClientPerformed(ActionEvent actionEvent) {
-            ClientDaoImpl.deleteClientById(Integer.parseInt(textId.getText()));
+            ClientDaoImpl.deleteClientById(Integer.parseInt(textIdCltDelete.getText()));
             showClients();
             clearFields();
            tester --;
@@ -152,7 +163,7 @@ public class ClientController {
 
     @FXML
     public void showClientsById(ActionEvent actionEvent){
-        ObservableList<Client> clientsList = ClientDaoImpl.getClientsById(Integer.parseInt(textId.getText()));
+        ObservableList<Client> clientsList = ClientDaoImpl.getClientsById(Integer.parseInt(textIdCltSearch.getText()));
         tableClients.setItems(clientsList);
         colId.setCellValueFactory(new PropertyValueFactory<Client, Integer>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<Client, String>("name"));
@@ -164,7 +175,7 @@ public class ClientController {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showClients(); tester();
+        showClients(); //tester();
     }
 
 

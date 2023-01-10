@@ -27,7 +27,16 @@ public class SalesController implements Initializable {
 
 
     @FXML
-    private TextField textIdSale;
+    private  TextField textIdSaleDelete;
+
+
+    @FXML
+    private  TextField textIdSaleSearch;
+
+
+
+
+
 
     @FXML
     private TextField textNameSale;
@@ -67,7 +76,7 @@ public class SalesController implements Initializable {
     @FXML
     private TableColumn<Sales, String> colDate;
 
-    private boolean notEmpty = false;
+
 
 
 
@@ -78,31 +87,19 @@ public class SalesController implements Initializable {
         SalesDaoImpl.addSales(textNameSale.getText(), Integer.parseInt(textUnites.getText()), Integer.parseInt(textTotal.getText()), textDate.getText());
         showSales();
         clearFields();
-        notEmpty = true;
     }
 
-    @FXML
-    public void updateSalesPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
-            SalesDaoImpl.updateSalesById(Integer.parseInt(textIdSale.getText()), textNameSale.getText(), Integer.parseInt(textUnites.getText()), Integer.parseInt(textTotal.getText()), textDate.getText());
-            showSales();
-            clearFields();
-        }
-    }
+
 
     @FXML
     public void deleteSalesPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
-            SalesDaoImpl.deleteSalesById(Integer.parseInt(textIdSale.getText()));
+            SalesDaoImpl.deleteSalesById(Integer.parseInt(textIdSaleDelete.getText()));
             showSales();
             clearFields();
-        }
+
     }
 
-    @FXML
-    public void clearFields(ActionEvent actionEvent) {
-        clearFields();
-    }
+
 
 
 
@@ -119,7 +116,7 @@ public class SalesController implements Initializable {
 
     @FXML
     public void showSalesById(ActionEvent actionEvent){
-        ObservableList<Sales> salesList = SalesDaoImpl.getSalesById(Integer.parseInt(textIdSale.getText()));
+        ObservableList<Sales> salesList = SalesDaoImpl.getSalesById(Integer.parseInt(textIdSaleSearch.getText()));
         tableSales.setItems(salesList);
         colIdSale.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("id"));
         colNameSale.setCellValueFactory(new PropertyValueFactory<Sales, String>("name"));
@@ -130,7 +127,7 @@ public class SalesController implements Initializable {
 
 
 
-    @Override
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showSales();
     }
