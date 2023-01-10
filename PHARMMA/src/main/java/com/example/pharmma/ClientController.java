@@ -44,7 +44,7 @@ public class ClientController {
     @FXML
     private TableView<Client> tableClients;
     @FXML
-    private Button btnSave;
+    private Button btnAdd;
 
     @FXML
     private TableColumn<Client, Integer> colId;
@@ -60,6 +60,8 @@ public class ClientController {
     @FXML
     private TableColumn<Client, Integer> colPhoneNbr;
 
+    private Button btnDelete;
+
     private int tester = 0;
 
     private Stage stage;
@@ -67,6 +69,13 @@ public class ClientController {
     private Parent root;
 
 
+
+
+    public void tester(){
+        if (tester == 0){
+            btnDelete.setDisable(true);
+        }
+    }
 
     @FXML
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -112,27 +121,20 @@ public class ClientController {
 
     @FXML
     public void updateClientPerformed(ActionEvent actionEvent) {
-        if(tester != 0){
             ClientDaoImpl.updateClientById(Integer.parseInt(textId.getText()), textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
             showClients();
             clearFields();
-        }
     }
 
     @FXML
     public void deleteClientPerformed(ActionEvent actionEvent) {
-        if(tester != 0){
             ClientDaoImpl.deleteClientById(Integer.parseInt(textId.getText()));
             showClients();
             clearFields();
            tester --;
-        }
+
     }
 
-    @FXML
-    public void clearFields(ActionEvent actionEvent) {
-        clearFields();
-    }
 
 
 
@@ -140,11 +142,11 @@ public class ClientController {
     public void showClients(){
         ObservableList<Client> clientsList = ClientDaoImpl.getClients();
         tableClients.setItems(clientsList);
-        colId.setCellValueFactory(new PropertyValueFactory<Client, Integer>("Id_client"));
-        colName.setCellValueFactory(new PropertyValueFactory<Client, String>("Name"));
-        colLastName.setCellValueFactory(new PropertyValueFactory<Client, String>("LastName"));
-        colAge.setCellValueFactory(new PropertyValueFactory<Client, Integer>("Age"));
-        colPhoneNbr.setCellValueFactory(new PropertyValueFactory<Client, Integer>("Phone_nbr"));
+        colId.setCellValueFactory(new PropertyValueFactory<Client, Integer>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<Client, String>("name"));
+        colLastName.setCellValueFactory(new PropertyValueFactory<Client, String>("lastname"));
+        colAge.setCellValueFactory(new PropertyValueFactory<Client, Integer>("age"));
+        colPhoneNbr.setCellValueFactory(new PropertyValueFactory<Client, Integer>("phoneNbr"));
     }
 
 
@@ -152,17 +154,17 @@ public class ClientController {
     public void showClientsById(ActionEvent actionEvent){
         ObservableList<Client> clientsList = ClientDaoImpl.getClientsById(Integer.parseInt(textId.getText()));
         tableClients.setItems(clientsList);
-        colId.setCellValueFactory(new PropertyValueFactory<Client, Integer>("Id_client"));
-        colName.setCellValueFactory(new PropertyValueFactory<Client, String>("Name"));
-        colLastName.setCellValueFactory(new PropertyValueFactory<Client, String>("LastName"));
-        colAge.setCellValueFactory(new PropertyValueFactory<Client, Integer>("Age"));
-        colPhoneNbr.setCellValueFactory(new PropertyValueFactory<Client, Integer>("Phone_nbr"));
+        colId.setCellValueFactory(new PropertyValueFactory<Client, Integer>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<Client, String>("name"));
+        colLastName.setCellValueFactory(new PropertyValueFactory<Client, String>("lastname"));
+        colAge.setCellValueFactory(new PropertyValueFactory<Client, Integer>("age"));
+        colPhoneNbr.setCellValueFactory(new PropertyValueFactory<Client, Integer>("phoneNbr"));
     }
 
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showClients();
+        showClients(); tester();
     }
 
 
@@ -171,7 +173,6 @@ public class ClientController {
         textLastName.setText(null);
         textAge.setText(null);
         textPhoneNbr.setText(null);
-        btnSave.setDisable(true);
 
     }
 }

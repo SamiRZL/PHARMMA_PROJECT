@@ -109,11 +109,11 @@ public class SalesController implements Initializable {
     public void showSales(){
         ObservableList<Sales> salesList = SalesDaoImpl.getSales();
         tableSales.setItems(salesList);
-        colIdSale.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("Id_sales"));
-        colNameSale.setCellValueFactory(new PropertyValueFactory<Sales, String>("Product_name"));
-        colUnites.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("Unites"));
-        colTotal.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("Total"));
-        colDate.setCellValueFactory(new PropertyValueFactory<Sales, String>("Date"));
+        colIdSale.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("id"));
+        colNameSale.setCellValueFactory(new PropertyValueFactory<Sales, String>("name"));
+        colUnites.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("unites"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("total"));
+        colDate.setCellValueFactory(new PropertyValueFactory<Sales, String>("date"));
     }
 
 
@@ -121,11 +121,11 @@ public class SalesController implements Initializable {
     public void showSalesById(ActionEvent actionEvent){
         ObservableList<Sales> salesList = SalesDaoImpl.getSalesById(Integer.parseInt(textIdSale.getText()));
         tableSales.setItems(salesList);
-        colIdSale.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("Id_sales"));
-        colNameSale.setCellValueFactory(new PropertyValueFactory<Sales, String>("Product_name"));
-        colUnites.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("Unites"));
-        colTotal.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("Total"));
-        colDate.setCellValueFactory(new PropertyValueFactory<Sales, String>("Date"));
+        colIdSale.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("id"));
+        colNameSale.setCellValueFactory(new PropertyValueFactory<Sales, String>("name"));
+        colUnites.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("unites"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("total"));
+        colDate.setCellValueFactory(new PropertyValueFactory<Sales, String>("date"));
     }
 
 

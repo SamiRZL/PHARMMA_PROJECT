@@ -16,6 +16,60 @@ public class ProductDaoImpl extends Product{
 
 
 
+    static int units = 0;
+
+    public static int totalUnits() {
+        String query = "select Quantity from product ";
+
+
+        try {
+            statement = con.prepareStatement(query);
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()) {
+
+                units = units + rs.getInt("Quantity");
+
+            }
+
+            return units;
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    static int outOfStockCpt = 0;
+
+    public static int outOfStock() {
+        String query = "select Quantity from product ";
+
+
+        try {
+            statement = con.prepareStatement(query);
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()) {
+
+                int qty = rs.getInt("Quantity");
+                if (qty == 0) {
+                    outOfStockCpt++;
+                }
+
+            }
+
+            return outOfStockCpt;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+
 
 
     public static ObservableList<Product> getProducts(){

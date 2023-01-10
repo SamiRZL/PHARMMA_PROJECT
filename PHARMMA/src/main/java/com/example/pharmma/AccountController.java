@@ -81,7 +81,10 @@ public class AccountController implements Initializable {
     @FXML
     private Button btnAdd;
 
-    private boolean notEmpty = false;
+    @FXML
+    private Button btnDelete;
+
+    private int tester = 0;
 
 
     private Stage stage;
@@ -128,6 +131,7 @@ public class AccountController implements Initializable {
         AccountDaoImpl.addAccount(textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
         clearFields();
         showAccounts();
+        tester++;
 
 
     }
@@ -144,36 +148,28 @@ public class AccountController implements Initializable {
     }
 
 
-
-
-
-
-
-
-
-
-
-
+    public void tester(){
+        if (tester == 0){
+            btnDelete.setDisable(true);
+        }
+    }
 
 
     @FXML
     public void updateAccountPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
+        if(tester != 0){
             AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-
-           showAccounts();
+            showAccounts();
             clearFields();
         }
     }
 
     @FXML
     public void deleteAccountPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
             AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
-
             showAccounts();
             clearFields();
-        }
+            tester--;
     }
 
 
@@ -181,24 +177,24 @@ public class AccountController implements Initializable {
     public  void showAccounts(){
         ObservableList<Account> accountsList = AccountDaoImpl.getAccounts();
         tableAccounts.setItems(accountsList);
-        colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
-        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("Name"));
-        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("LastName"));
-        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("Job"));
-        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("Username"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
+        colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("id"));
+        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("name"));
+        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("lastname"));
+        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("job"));
+        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("username"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
     }
 
     @FXML
     public void showAccountsById(ActionEvent actionEvent){
         ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAccSearch.getText()));
         tableAccounts.setItems(accountsList);
-        colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
-        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("Name"));
-        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("LastName"));
-        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("Job"));
-        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("Username"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
+        colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("id"));
+        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("name"));
+        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("lastname"));
+        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("job"));
+        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("username"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
     }
 
 
@@ -206,6 +202,7 @@ public class AccountController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showAccounts();
+        tester();
 
 
     }
