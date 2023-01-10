@@ -91,21 +91,6 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Statistics" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icons/statistics.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </Button>
             <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToSTOCK" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Stock" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
@@ -129,7 +114,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <TableView fx:id="tableAccounts" layoutX="22.0" layoutY="282.0" prefHeight="362.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@../../../css/style.css">
+            <TableView fx:id="tableAccounts" layoutX="22.0" layoutY="330.0" prefHeight="314.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@../../../css/style.css">
                <columns>
                   <TableColumn fx:id="colId" prefWidth="102.0" style="-fx-background-color: #FFFFFF;" text="ID" />
 
@@ -140,14 +125,14 @@
                   <TableColumn fx:id="colPassword" prefWidth="131.0" style="-fx-background-color: #FFFFFF;" text="PASSWORD" />
                </columns>
             </TableView>
-            <Pane layoutX="22.0" layoutY="84.0" prefHeight="186.0" prefWidth="326.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+            <Pane layoutX="22.0" layoutY="128.0" prefHeight="186.0" prefWidth="326.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
                <children>
-                  <TextField fx:id="textJob" layoutX="40.0" layoutY="82.0" prefHeight="25.0" prefWidth="117.0" promptText="Job" style="-fx-background-color: #68e6d5;" />
-                  <TextField fx:id="textNameAcc" layoutX="40.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" promptText="Name" style="-fx-background-color: adfff4;" />
-                  <TextField fx:id="textLastNameAcc" layoutX="168.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" promptText="Last Name" style="-fx-background-color: adfff4;" />
-                  <TextField fx:id="textUsername" layoutX="168.0" layoutY="82.0" prefHeight="25.0" prefWidth="117.0" promptText="Username" style="-fx-background-color: #68e6d5;" />
-                  <TextField fx:id="textPassword" layoutX="40.0" layoutY="113.0" prefHeight="25.0" prefWidth="246.0" promptText="Password" style="-fx-background-color: #3bcebb;" />
-                  <Button fx:id="btnAdd" layoutX="99.0" layoutY="147.0" mnemonicParsing="false" onAction="#addAccountPerformed" prefHeight="19.0" prefWidth="128.0" style="-fx-background-color: #00BFA6;">
+                  <TextField fx:id="textJob" layoutX="40.0" layoutY="82.0" prefHeight="25.0" prefWidth="117.0" promptText="Job" style="-fx-background-color: #FBF4F9;" />
+                  <TextField fx:id="textNameAcc" layoutX="40.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" promptText="Name" style="-fx-background-color: #FBF4F9;" />
+                  <TextField fx:id="textLastNameAcc" layoutX="168.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" promptText="Last Name" style="-fx-background-color: #FBF4F9;" />
+                  <TextField fx:id="textUsername" layoutX="168.0" layoutY="82.0" prefHeight="25.0" prefWidth="117.0" promptText="Username" style="-fx-background-color: #FBF4F9;" />
+                  <TextField fx:id="textPassword" layoutX="40.0" layoutY="113.0" prefHeight="25.0" prefWidth="246.0" promptText="Password" style="-fx-background-color: #FBF4F9;" />
+                  <Button fx:id="btnAdd" layoutX="99.0" layoutY="147.0" mnemonicParsing="false" onAction="#addAccountPerformed" prefHeight="19.0" prefWidth="128.0" style="-fx-background-color: #68e6d5;">
 
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -165,44 +150,70 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane layoutX="368.0" layoutY="105.0" prefHeight="144.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+            <Pane layoutX="362.0" layoutY="170.0" prefHeight="144.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
                <children>
                   <Text fill="#b2b2b2" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Update Acount">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="textIdAcc" layoutX="17.0" layoutY="44.0" prefHeight="41.0" prefWidth="113.0" promptText="Id" style="-fx-background-color: fce7b0;" />
-                  <Button layoutX="39.0" layoutY="93.0" mnemonicParsing="false" onAction="#updateAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f3d584;">
+                  <TextField fx:id="textIdAcc" layoutX="17.0" layoutY="43.0" prefHeight="41.0" prefWidth="113.0" promptText="             &gt;" style="-fx-background-color: fce7b0;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <Button layoutX="39.0" layoutY="105.0" mnemonicParsing="false" onAction="#updateAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f3d584;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="62.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="61.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../icons/edit.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="textIdAcc" layoutX="533.0" layoutY="105.0" prefHeight="144.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+            <Pane fx:id="textIdAcc" layoutX="530.0" layoutY="170.0" prefHeight="144.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
                <children>
                   <Text fill="#b2b2b2" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Delete Acount">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="textIdAcc" layoutX="17.0" layoutY="45.0" prefHeight="41.0" prefWidth="113.0" promptText="Id" style="-fx-background-color: ffc1c1;" />
-                  <Button layoutX="42.0" layoutY="95.0" mnemonicParsing="false" onAction="#deleteClientPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f38484;">
+                  <TextField fx:id="textIdAcc" layoutX="18.0" layoutY="42.0" prefHeight="41.0" prefWidth="113.0" promptText="             &gt;" style="-fx-background-color: ffc1c1;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <Button layoutX="41.0" layoutY="105.0" mnemonicParsing="false" onAction="#deleteClientPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f38484;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="65.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="19.0" layoutX="63.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../icons/delete.png" />
                      </image>
                   </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="370.0" layoutY="38.0" prefHeight="68.0" prefWidth="320.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+               <children>
+                  <TextField fx:id="textIdAcc1" layoutX="50.0" layoutY="22.0" prefHeight="25.0" prefWidth="192.0" promptText="Search Account" style="-fx-background-color: #FBF4F9;" />
+                  <ImageView fitHeight="25.0" fitWidth="19.0" layoutX="24.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icons/search.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="252.0" layoutY="22.0" mnemonicParsing="false" onAction="#showAccountsById" prefHeight="6.0" prefWidth="4.0" style="-fx-background-color: #68e6d5;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="279.0" layoutY="22.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="7.0" style="-fx-background-color: f38484;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>
