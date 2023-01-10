@@ -178,7 +178,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="textIdAcc" layoutX="533.0" layoutY="105.0" prefHeight="144.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+            <Pane fx:id="" layoutX="533.0" layoutY="105.0" prefHeight="144.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
                <children>
                   <Text fill="#b2b2b2" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Delete Acount">
                      <font>

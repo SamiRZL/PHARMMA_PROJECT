@@ -178,17 +178,17 @@ public class AccountController implements Initializable {
         colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
     }
 
-    //@FXML
-    //public void showAccountsById(ActionEvent actionEvent){
-        //ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAcc.getText()));
-        //tableAccounts.setItems(accountsList);
-        //colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
-        //colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("Name"));
-        //colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("LastName"));
-        //colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("Job"));
-        //colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("Username"));
-        //colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
-    //}
+    @FXML
+    public void showAccountsById(ActionEvent actionEvent){
+        ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAcc.getText()));
+        tableAccounts.setItems(accountsList);
+        colIdAcc.setCellValueFactory(new PropertyValueFactory<Account, Integer>("id"));
+        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("ame"));
+        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("lastname"));
+        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("job"));
+        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("username"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
+    }
 
 
 
