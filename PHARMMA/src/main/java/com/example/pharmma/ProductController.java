@@ -21,53 +21,53 @@ public class ProductController {
 
 
 
-   // @FXML
-   //private TextField textIdProd;
+    @FXML
+   private TextField textIdProd;
 
-    //@FXML
-    //private TextField textNameProd;
+    @FXML
+    private TextField textNameProd;
 
-    //@FXML
-    //private TextField textQty;
+    @FXML
+    private TextField textQty;
 
-    //@FXML
-    //private TextField textPrice;
+    @FXML
+    private TextField textPrice;
 
-    //@FXML
-    //private TextField textExpDate;
-
-
+    @FXML
+    private TextField textExpDate;
 
 
 
 
 
-    //@FXML
-    //private TableView<Product> tableProducts;
-
-    //@FXML
-    //private TableColumn<Product, Integer> colIdProd;
-
-    //@FXML
-    //private TableColumn<Product, String> colNameProd;
-    //@FXML
-    //private TableColumn<Product, Integer> colQty;
-
-    //@FXML
-    //private TableColumn<Product, Integer> colPrice;
-
-    //@FXML
-    //private TableColumn<Product, String> colExpDate;
 
 
-    //@FXML
-    //private Label outOfStockLabel;
+    @FXML
+    private TableView<Product> tableProducts;
 
-    //@FXML
-    //private Label unitsLabel;
+    @FXML
+    private TableColumn<Product, Integer> colIdProd;
 
-    //@FXML
-    //private Label totalLabel;
+    @FXML
+    private TableColumn<Product, String> colNameProd;
+    @FXML
+    private TableColumn<Product, Integer> colQty;
+
+    @FXML
+    private TableColumn<Product, Integer> colPrice;
+
+    @FXML
+    private TableColumn<Product, String> colExpDate;
+
+
+    @FXML
+    private Label outOfStockLabel;
+
+    @FXML
+    private Label unitsLabel;
+
+    @FXML
+    private Label totalLabel;
 
     //private int tester = 0;
 
