@@ -216,7 +216,7 @@
             <Text fill="#fbf4f9" layoutX="28.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+14% From last month" wrappingWidth="192.0">
                <font>
                   <Font name="System Bold" size="10.0" />
-               </font>
+               </font>²
             </Text>
             <ImageView fitHeight="314.0" fitWidth="230.0" layoutX="-13.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
                <image>
