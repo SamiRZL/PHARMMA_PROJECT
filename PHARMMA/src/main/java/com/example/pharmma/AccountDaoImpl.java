@@ -1,6 +1,7 @@
 package com.example.pharmma;
 
 
+import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -21,7 +22,7 @@ public class AccountDaoImpl extends Account {
     public static ObservableList<Account> getAccounts(){
         ObservableList<Account> accountTab = FXCollections.observableArrayList();
 
-        String query = "select * from account";
+        String query = "select Id_account, Name, LastName, Job, Username, Password from account";
         try {
             statement = con.prepareStatement(query);
             resultSet = statement.executeQuery();
