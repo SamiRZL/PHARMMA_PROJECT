@@ -39,14 +39,14 @@
                             <image>
                                 <Image url="" />
                             </image>
-                        </ImageView>
+                  </ImageView>
                     </graphic>
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
-                    <padding>
-                        <Insets left="50.0" />
-                    </padding>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
                 </Button>
                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Dashboard" textFill="WHITE">
                     <graphic>
@@ -193,56 +193,57 @@
                         </Button>
                     </children>
                 </Pane>
-                <ImageView fitHeight="173.0" fitWidth="205.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../icons/Dashcont2.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="28.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../icons/income.png" />
-                    </image>
-                </ImageView>
-                <Text fill="#fbf4f9" layoutX="66.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Income" wrappingWidth="79.0">
-                    <font>
-                        <Font name="System Bold" size="13.0" />
-                    </font>
-                </Text>
-                <Label layoutX="28.0" layoutY="365.0" prefHeight="49.0" prefWidth="155.0" text="14122 DA" textFill="#fbf4f9">
-                    <font>
-                        <Font name="System Bold" size="30.0" />
-                    </font>
-                </Label>
-                <Text fill="#fbf4f9" layoutX="28.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+14% From last month" wrappingWidth="192.0">
-                    <font>
-                        <Font name="System Bold" size="10.0" />
-                    </font>
-                </Text>
-                <ImageView fitHeight="314.0" fitWidth="230.0" layoutX="-13.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="29.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../icons/income.png" />
-                    </image>
-                </ImageView>
-                <Text fill="#b2b2b2" layoutX="80.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Sales" wrappingWidth="79.0">
-                    <font>
-                        <Font name="System Bold" size="16.0" />
-                    </font>
-                </Text>
-                <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="92" textFill="#747575">
-                    <font>
-                        <Font name="System Bold" size="30.0" />
-                    </font>
-                </Label>
-                <Text fill="#b2b2b2" layoutX="69.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+23% From last month" wrappingWidth="192.0">
-                    <font>
-                        <Font name="System Bold" size="9.0" />
-                    </font>
-                </Text>
+            <ImageView fitHeight="173.0" fitWidth="205.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Dashcont2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="28.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/income.png" />
+               </image>
+            </ImageView>
+            <Text fill="#fbf4f9" layoutX="66.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Income" wrappingWidth="79.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Label layoutX="28.0" layoutY="365.0" prefHeight="49.0" prefWidth="155.0" text="14122 DA" textFill="#fbf4f9">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Text fill="#fbf4f9" layoutX="28.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+14% From last month" wrappingWidth="192.0">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="314.0" fitWidth="230.0" layoutX="-13.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Dashcont4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="35.0" layoutX="29.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/income.png" />
+               </image>
+            </ImageView>
+            <Text fill="#b2b2b2" layoutX="80.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Sales" wrappingWidth="79.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="92" textFill="#747575">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Text fill="#b2b2b2" layoutX="69.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+23% From last month" wrappingWidth="192.0">
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+            </Text>
+
             </children>
         </Pane>
     </children>

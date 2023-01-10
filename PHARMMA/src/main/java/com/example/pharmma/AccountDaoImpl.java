@@ -108,8 +108,7 @@ public class AccountDaoImpl extends Account {
         }
     }
 
-<<<<<<< HEAD
-=======
+
 
     public static void deleteAccountById(int id){
         String query = "delete from account where Id_account = ?";
@@ -123,5 +122,4 @@ public class AccountDaoImpl extends Account {
     }
 
 
->>>>>>> main
 }
