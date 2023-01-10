@@ -36,7 +36,10 @@ public class AccountController implements Initializable {
 
 
     @FXML
-    private static TextField textIdAcc;
+    private  TextField textIdAcc;
+
+    @FXML
+    private  TextField textIdAccUp;
 
 
 
@@ -69,8 +72,7 @@ public class AccountController implements Initializable {
     private  TableColumn<Account, String> colUsername;
     @FXML
     private  TableColumn<Account, String> colPassword;
-    @FXML
-    private Button btnAdd;
+
 
     private boolean notEmpty = false;
 
@@ -150,15 +152,14 @@ public class AccountController implements Initializable {
     @FXML
     public void updateAccountPerformed(ActionEvent actionEvent) {
         if(notEmpty){
-          AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+          AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUp.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
            showAccounts();
             clearFields();
         }
     }
 
     @FXML
-    public void deleteAccountPerformed(ActionEvent actionEvent) {
-
+    public void deleteAccountPerformed(ActionEvent actionEvent) throws IOException {
             AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
             clearFields();
             showAccounts();

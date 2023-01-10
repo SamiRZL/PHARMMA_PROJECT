@@ -110,7 +110,7 @@ public class AccountDaoImpl extends Account {
 
 
     public static void deleteAccountById(int id){
-        String query = "DELETE FROM account where Id_account = ?";
+        String query = "delete from account where Id_account = ?";
         try {
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
