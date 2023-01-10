@@ -263,7 +263,7 @@
                   <Image url="@../../../icons/OutofStockicon.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="71.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products Out Stock" wrappingWidth="90.0">
+            <Text fill="WHITE" layoutX="71.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products Out of Stock" wrappingWidth="90.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
