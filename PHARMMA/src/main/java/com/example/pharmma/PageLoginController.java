@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.pharmma.ClientController.profileBtn;
+
 import static com.example.pharmma.PageLogin.jobAccount;
 import static javax.swing.JFrame.*;
 

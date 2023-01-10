@@ -108,4 +108,20 @@ public class AccountDaoImpl extends Account {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+    public static void deleteAccountById(int id){
+        String query = "delete from account where Id_account = ?";
+        try {
+            statement = con.prepareStatement(query);
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+>>>>>>> main
 }
