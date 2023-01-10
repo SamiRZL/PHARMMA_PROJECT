@@ -161,7 +161,6 @@ public class ClientController {
 
 
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showClients();
     }

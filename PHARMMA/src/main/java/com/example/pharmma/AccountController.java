@@ -35,10 +35,7 @@ public class AccountController implements Initializable {
 
 
 
-<<<<<<< HEAD
-   // @FXML
-   // private static TextField textIdAcc;
-=======
+
     @FXML
     private  TextField textIdAccDelete;
 
@@ -48,7 +45,6 @@ public class AccountController implements Initializable {
     @FXML
     private  TextField textIdAccSearch;
 
->>>>>>> main
 
 
     @FXML
@@ -163,26 +159,18 @@ public class AccountController implements Initializable {
     @FXML
     public void updateAccountPerformed(ActionEvent actionEvent) {
         if(notEmpty){
-<<<<<<< HEAD
             AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-=======
-          AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUpdate.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
->>>>>>> main
+
            showAccounts();
             clearFields();
         }
     }
 
     @FXML
-<<<<<<< HEAD
     public void deleteAccountPerformed(ActionEvent actionEvent) {
         if(notEmpty){
             AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
-=======
-    public void deleteAccountPerformed(ActionEvent actionEvent) throws IOException {
-            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAccDelete.getText()));
-            clearFields();
->>>>>>> main
+
             showAccounts();
             clearFields();
         }
