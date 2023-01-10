@@ -38,8 +38,8 @@ public class AccountController implements Initializable {
     @FXML
     private  TextField textIdAcc;
 
-    @FXML
-    private  TextField textIdAccUp;
+    //@FXML
+    //private  TextField textIdAccUp;
 
 
 
@@ -149,14 +149,14 @@ public class AccountController implements Initializable {
 
 
 
-    @FXML
-    public void updateAccountPerformed(ActionEvent actionEvent) {
-        if(notEmpty){
-          AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUp.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-           showAccounts();
-            clearFields();
-        }
-    }
+    //@FXML
+    //public void updateAccountPerformed(ActionEvent actionEvent) {
+        //if(notEmpty){
+          //AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUp.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+           //showAccounts();
+            //clearFields();
+        //}
+    //}
 
     @FXML
     public void deleteAccountPerformed(ActionEvent actionEvent) throws IOException {

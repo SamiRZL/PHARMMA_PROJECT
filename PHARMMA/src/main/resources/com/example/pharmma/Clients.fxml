@@ -37,7 +37,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../icons/profile.png" />
+                                <Image url="" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -82,7 +82,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../icons/client.png" />
+                                <Image url="" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -150,14 +150,14 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane fx:id="textIdAcc" layoutX="370.0" layoutY="476.0" prefHeight="156.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+                <Pane fx:id=" " layoutX="370.0" layoutY="476.0" prefHeight="156.0" prefWidth="146.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
                     <children>
                         <Text fill="#b2b2b2" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Update Client">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="textId" layoutX="18.0" layoutY="42.0" prefHeight="41.0" prefWidth="113.0" promptText="             &gt;" style="-fx-background-color: fce7b0;">
+                        <TextField  layoutX="18.0" layoutY="42.0" prefHeight="41.0" prefWidth="113.0" promptText="             &gt;" style="-fx-background-color: fce7b0;">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -179,7 +179,7 @@
                         <TextField fx:id="textId" layoutX="50.0" layoutY="22.0" prefHeight="25.0" prefWidth="192.0" promptText="Search Client" style="-fx-background-color: #FBF4F9;" />
                         <ImageView fitHeight="25.0" fitWidth="19.0" layoutX="24.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../icons/search.png" />
+                                <Image url="" />
                             </image>
                         </ImageView>
                         <Button layoutX="252.0" layoutY="22.0" mnemonicParsing="false" onAction="#showClientsById" prefHeight="6.0" prefWidth="4.0" style="-fx-background-color: #68e6d5;">
@@ -201,7 +201,7 @@
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="textId" layoutX="18.0" layoutY="42.0" prefHeight="41.0" prefWidth="113.0" promptText="             &gt;" style="-fx-background-color: ffc1c1;">
+                        <TextField fx:id="" layoutX="18.0" layoutY="42.0" prefHeight="41.0" prefWidth="113.0" promptText="             &gt;" style="-fx-background-color: ffc1c1;">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -220,12 +220,12 @@
                 </Pane>
                 <ImageView fitHeight="320.0" fitWidth="223.0" layoutX="-10.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../icons/ClientManag.png" />
+                        <Image url="" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="41.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../icons/client.png" />
+                        <Image url="" />
                     </image>
                 </ImageView>
                 <Text fill="#b2b2b2" layoutX="72.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clients Registered" wrappingWidth="90.0">

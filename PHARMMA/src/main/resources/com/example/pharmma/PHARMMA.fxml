@@ -166,7 +166,7 @@
                      </font>
                   </Text>
                   <TextField layoutX="17.0" layoutY="44.0" prefHeight="41.0" prefWidth="113.0" promptText="Id" style="-fx-background-color: fce7b0;" />
-                  <Button layoutX="39.0" layoutY="93.0" mnemonicParsing="false" onAction="#updateAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f3d584;">
+                  <Button layoutX="39.0" layoutY="93.0" mnemonicParsing="false" onAction="#" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f3d584;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
