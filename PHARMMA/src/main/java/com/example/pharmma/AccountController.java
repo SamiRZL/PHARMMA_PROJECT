@@ -158,7 +158,7 @@ public class AccountController implements Initializable {
     }
 
     @FXML
-    public void deleteClientPerformed(ActionEvent actionEvent) {
+    public void deleteAccountPerformed(ActionEvent actionEvent) {
         if(notEmpty){
             AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
             showAccounts();
