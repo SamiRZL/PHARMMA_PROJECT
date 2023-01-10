@@ -1,5 +1,8 @@
 package com.example.pharmma;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
 public class Account {
 
     private int id;

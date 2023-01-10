@@ -60,6 +60,9 @@ public class ClientController {
     //@FXML
     //private TableColumn<Client, Integer> colPhoneNbr;
 
+    @FXML
+    static Button profileBtn = new Button();
+
     //private int tester = 0;
 
     private Stage stage;

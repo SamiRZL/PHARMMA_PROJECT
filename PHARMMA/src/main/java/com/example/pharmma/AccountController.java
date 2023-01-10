@@ -35,8 +35,8 @@ public class AccountController implements Initializable {
 
 
 
-   // @FXML
-   // private static TextField textIdAcc;
+    @FXML
+    private static TextField textIdAcc;
 
 
 
@@ -58,7 +58,7 @@ public class AccountController implements Initializable {
     @FXML
     private  TableView<Account> tableAccounts;
     @FXML
-    private  TableColumn<Account, Integer> colId;
+    private  TableColumn<Account, Integer> colIdAcc;
     @FXML
     private  TableColumn<Account, String> colNameAcc;
     @FXML
@@ -147,35 +147,34 @@ public class AccountController implements Initializable {
 
 
 
-    //@FXML
-    //public void updateAccountPerformed(ActionEvent actionEvent) {
-      //  if(notEmpty){
-        //    AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-          //  showAccounts();
-            //clearFields();
-        //}
-    //}
+    @FXML
+    public void updateAccountPerformed(ActionEvent actionEvent) {
+        if(notEmpty){
+          AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAcc.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+           showAccounts();
+            clearFields();
+        }
+    }
 
-    //@FXML
-    //public void deleteClientPerformed(ActionEvent actionEvent) {
-      //  if(notEmpty){
-        //    AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
-          //  showAccounts();
-            //clearFields();
-        //}
-    //}
+    @FXML
+    public void deleteAccountPerformed(ActionEvent actionEvent) {
+
+            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
+            clearFields();
+            showAccounts();
+    }
 
 
 
     public  void showAccounts(){
         ObservableList<Account> accountsList = AccountDaoImpl.getAccounts();
         tableAccounts.setItems(accountsList);
-        colId.setCellValueFactory(new PropertyValueFactory<Account, Integer>("Id_account"));
-        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("Name"));
-        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("LastName"));
-        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("Job"));
-        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("Username"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("Password"));
+        colIdAcc.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("name"));
+        colLastNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("lastname"));
+        colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("job"));
+        colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("username"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
     }
 
     //@FXML
