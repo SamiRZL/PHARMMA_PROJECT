@@ -31,20 +31,6 @@
                         </Text>
                     </children>
                 </Pane>
-                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="68.0" prefWidth="247.0" style="-fx-background-radius: 30;" stylesheets="" text="Profile" textFill="WHITE">
-                    <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../icons/profile.png" />
-                            </image></ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                    <padding>
-                        <Insets left="50.0" />
-                    </padding>
-                </Button>
                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Dashboard" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
@@ -97,6 +83,20 @@
                                 <Image url="@../../../icons/ready-stock.png" />
                             </image>
                         </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="68.0" prefWidth="247.0" style="-fx-background-radius: 30;" stylesheets="" text="Profile" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../icons/profile.png" />
+                            </image></ImageView>
                     </graphic>
                     <font>
                         <Font name="System Bold" size="18.0" />
