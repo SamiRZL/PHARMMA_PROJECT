@@ -41,22 +41,22 @@ public class ProductController {
 
 
 
-  //  @FXML
-  //  private TableView<Product> tableProducts;
+    @FXML
+    private TableView<Product> tableProducts;
 
-  //  @FXML
-   // private TableColumn<Product, Integer> colIdProd;
+    @FXML
+    private TableColumn<Product, Integer> colIdProd;
 
-   // @FXML
-   // private TableColumn<Product, String> colNameProd;
-  //  @FXML
-  //  private TableColumn<Product, Integer> colQty;
+    @FXML
+    private TableColumn<Product, String> colNameProd;
+    @FXML
+    private TableColumn<Product, Integer> colQty;
 
-  //  @FXML
-  //  private TableColumn<Product, Integer> colPrice;
+    @FXML
+    private TableColumn<Product, Integer> colPrice;
 
-    //@FXML
-    //private TableColumn<Product, String> colExpDate;
+    @FXML
+    private TableColumn<Product, String> colExpDate;
 
 //    private int tester = 0;
 
