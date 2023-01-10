@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="984.0" style="-fx-background-color: #FBF4F9;" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmma.AccountController">
+<AnchorPane fx:id="rootpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="984.0" style="-fx-background-color: #FBF4F9;" stylesheets="@../../../css/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pharmma.AccountController">
    <children>
       <VBox layoutX="172.0" prefHeight="665.0" prefWidth="90.0" style="-fx-background-color: #00BFA6; -fx-background-radius: 90;" />
       <VBox prefHeight="665.0" prefWidth="223.0" style="-fx-background-color: #00BFA6;">
@@ -116,10 +109,10 @@
             </Text>
             <TableView fx:id="tableAccounts" layoutX="22.0" layoutY="330.0" prefHeight="314.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" stylesheets="@../../../css/style.css">
                <columns>
-                  <TableColumn fx:id="colId" prefWidth="102.0" style="-fx-background-color: #FFFFFF;" text="ID" />
+                  <TableColumn fx:id="colIdAcc" prefWidth="102.0" style="-fx-background-color: #FFFFFF;" text="Id_account" />
 
-                  <TableColumn fx:id="colNameAcc" prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="NAME" />
-                  <TableColumn fx:id="colLastNameAcc" prefWidth="115.0" style="-fx-background-color: #FFFFFF;" text="LAST NAME" />
+                  <TableColumn fx:id="colNameAcc" prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="Name" />
+                  <TableColumn fx:id="colLastNameAcc" prefWidth="115.0" style="-fx-background-color: #FFFFFF;" text="Last name" />
                   <TableColumn fx:id="colJob" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" text="JOB" />
                   <TableColumn fx:id="colUsername" prefWidth="113.0" style="-fx-background-color: #FFFFFF;" text="USERNAME" />
                   <TableColumn fx:id="colPassword" prefWidth="131.0" style="-fx-background-color: #FFFFFF;" text="PASSWORD" />
@@ -162,6 +155,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font></TextField>
                   <Button layoutX="39.0" layoutY="105.0" mnemonicParsing="false" onAction="#updateAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f3d584;">
+
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -185,6 +179,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font></TextField>
                   <Button layoutX="41.0" layoutY="105.0" mnemonicParsing="false" onAction="#deleteClientPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f38484;">
+
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

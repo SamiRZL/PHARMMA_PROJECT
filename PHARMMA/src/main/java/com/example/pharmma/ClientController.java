@@ -62,6 +62,7 @@ public class ClientController {
 
     private int tester = 0;
 
+
     private Stage stage;
     private Scene scene;
     private Parent root;
