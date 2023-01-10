@@ -36,10 +36,13 @@ public class AccountController implements Initializable {
 
 
     @FXML
-    private  TextField textIdAcc;
+    private  TextField textIdAccDelete;
 
-    //@FXML
-    //private  TextField textIdAccUp;
+    @FXML
+    private  TextField textIdAccUpdate;
+
+    @FXML
+    private  TextField textIdAccSearch;
 
 
 
@@ -149,18 +152,18 @@ public class AccountController implements Initializable {
 
 
 
-    //@FXML
-    //public void updateAccountPerformed(ActionEvent actionEvent) {
-        //if(notEmpty){
-          //AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUp.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
-           //showAccounts();
-            //clearFields();
-        //}
-    //}
+    @FXML
+    public void updateAccountPerformed(ActionEvent actionEvent) {
+        if(notEmpty){
+          AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUpdate.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+           showAccounts();
+            clearFields();
+        }
+    }
 
     @FXML
     public void deleteAccountPerformed(ActionEvent actionEvent) throws IOException {
-            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAcc.getText()));
+            AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAccDelete.getText()));
             clearFields();
             showAccounts();
     }
@@ -180,7 +183,7 @@ public class AccountController implements Initializable {
 
     @FXML
     public void showAccountsById(ActionEvent actionEvent){
-        ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAcc.getText()));
+        ObservableList<Account> accountsList = AccountDaoImpl.getAccountsById(Integer.parseInt(textIdAccSearch.getText()));
         tableAccounts.setItems(accountsList);
         colIdAcc.setCellValueFactory(new PropertyValueFactory<Account, Integer>("id"));
         colNameAcc.setCellValueFactory(new PropertyValueFactory<Account, String>("ame"));
