@@ -209,7 +209,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="279.0" layoutY="22.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="7.0" style="-fx-background-color: f38484;">
+                  <Button layoutX="279.0" layoutY="22.0" mnemonicParsing="false" onAction="#showAccounts" prefHeight="19.0" prefWidth="7.0" style="-fx-background-color: f38484;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

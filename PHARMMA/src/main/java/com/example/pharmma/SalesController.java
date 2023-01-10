@@ -76,17 +76,32 @@ public class SalesController implements Initializable {
     @FXML
     private TableColumn<Sales, String> colDate;
 
+    private int tester = 0;
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private Button btnUpdate;
 
 
 
 
 
+
+
+    public void tester(){
+        if (tester == 0){
+            btnDelete.setDisable(true);
+        }
+    }
 
     @FXML
     public void addSalesPerformed(ActionEvent actionEvent) {
         SalesDaoImpl.addSales(textNameSale.getText(), Integer.parseInt(textUnites.getText()), Integer.parseInt(textTotal.getText()), textDate.getText());
         showSales();
         clearFields();
+        tester++;
     }
 
 
@@ -96,6 +111,7 @@ public class SalesController implements Initializable {
             SalesDaoImpl.deleteSalesById(Integer.parseInt(textIdSaleDelete.getText()));
             showSales();
             clearFields();
+            tester--;
 
     }
 

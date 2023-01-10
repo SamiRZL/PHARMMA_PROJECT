@@ -46,6 +46,7 @@ public class ClientDaoImpl extends Client {
         String query = "select * from client where Id_client = ?";
         try {
             statement = con.prepareStatement(query);
+            statement.setInt(1, id);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int idClient = resultSet.getInt("Id_client");

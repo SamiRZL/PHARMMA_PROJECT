@@ -56,6 +56,9 @@ public class ClientController implements Initializable {
     @FXML
     private Button btnDelete;
 
+    @FXML
+    private Button btnUpdate;
+
 
     @FXML
     private TableColumn<Client, Integer> colId;
@@ -82,11 +85,13 @@ public class ClientController implements Initializable {
 
 
 
-    //public void tester(){
-       // if (tester == 0){
-       //     btnDelete.setDisable(true);
-      //  }
-   // }
+    public void tester(){
+        if (tester == 0){
+            btnDelete.setDisable(true);
+            btnUpdate.setDisable(true);
+
+        }
+    }
 
     @FXML
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -135,6 +140,7 @@ public class ClientController implements Initializable {
             ClientDaoImpl.updateClientById(Integer.parseInt(textIdCltUp.getText()), textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
             showClients();
             clearFields();
+
     }
 
     @FXML
@@ -175,7 +181,7 @@ public class ClientController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showClients(); //tester();
+        showClients(); tester();
     }
 
 

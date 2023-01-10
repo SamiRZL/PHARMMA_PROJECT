@@ -49,6 +49,7 @@ public class SalesDaoImpl extends Sales {
         String query = "select * from sales where Id_sales = ?";
         try {
             statement = con.prepareStatement(query);
+            statement.setInt(1, id);
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 int idSales = resultSet.getInt("Id_sales");

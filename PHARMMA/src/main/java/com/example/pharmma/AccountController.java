@@ -150,20 +150,31 @@ public class AccountController implements Initializable {
     }
 
 
-   // public void tester(){
-       // if (tester == 0){
-       //     btnDelete.setDisable(true);
-      //  }
-   // }
+   public void tester(){
+        if (tester == 0){
+           btnDelete.setDisable(true);
+       }
+    }
+
+
+
+   @FXML
+   public void updateClicked(ActionEvent actionEvent){
+       ObservableList<Account> accountUpdateList = AccountDaoImpl.displayUpdateById(Integer.parseInt(textIdAccUpdate.getText()));
+       
+
+
+
+   }
+
 
 
     @FXML
-    public void updateAccountPerformed(ActionEvent actionEvent) {
-        if(tester != 0){
+    public void updateSavedPerformed(ActionEvent actionEvent) {
             AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUpdate.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
             showAccounts();
             clearFields();
-        }
+
     }
 
     @FXML
@@ -204,7 +215,7 @@ public class AccountController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showAccounts();
-        //tester();
+        tester();
 
 
     }

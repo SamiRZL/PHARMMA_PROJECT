@@ -82,7 +82,7 @@ public  class PageLoginController implements Initializable {
 
 
         } else {
-            errorLabel.setText("Username or password entered is wrong");
+            errorLabel.setText("Username or password entered is incorrect");
             edtUsername.setText(null);
             edtPassword.setText(null);
         }

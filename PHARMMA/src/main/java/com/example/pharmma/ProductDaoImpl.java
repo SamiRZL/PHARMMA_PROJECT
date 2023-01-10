@@ -103,6 +103,7 @@ public class ProductDaoImpl extends Product{
         String query = "select * from product where Id_product = ?";
         try {
             statement = con.prepareStatement(query);
+            statement.setInt(1, id);
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 int idProduct = resultSet.getInt("Id_product");
