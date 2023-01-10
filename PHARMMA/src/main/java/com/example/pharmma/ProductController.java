@@ -14,26 +14,27 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class ProductController {
 
 
 
-  //  @FXML
-  //  private TextField textIdProd;
+    @FXML
+   private TextField textIdProd;
 
- //   @FXML
- //   private TextField textNameProd;
+    @FXML
+    private TextField textNameProd;
 
-  //  @FXML
-  //  private TextField textQty;
+    @FXML
+    private TextField textQty;
 
-  //  @FXML
-  //  private TextField textPrice;
+    @FXML
+    private TextField textPrice;
 
-  //  @FXML
-  //  private TextField textExpDate;
+    @FXML
+    private TextField textExpDate;
 
 
 
@@ -58,85 +59,110 @@ public class ProductController {
     @FXML
     private TableColumn<Product, String> colExpDate;
 
-//    private int tester = 0;
+
+    @FXML
+    private Label outOfStockLabel;
+
+    @FXML
+    private Label unitsLabel;
+
+    @FXML
+    private Label totalLabel;
+
+    private int tester = 0;
 
 
 
 
 
-  //  @FXML
-   // public void addProductPerformed(ActionEvent actionEvent) {
-     //   ProductDaoImpl.addProduct(textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
-       // showProducts();
-       // clearFields();
-      //  PageStockController.fillOutOfStockLabel();
-      //  tester ++;
-  //  }
+    @FXML
+    public void addProductPerformed(ActionEvent actionEvent) {
+        ProductDaoImpl.addProduct(textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
+        showProducts();
+        clearFields();
+       fillOutOfStockLabel();
+        tester ++;
+    }
 
- //   @FXML
-  //  public void updateProductPerformed(ActionEvent actionEvent) {
-    //    if(tester != 0){
-      //      ProductDaoImpl.updateProductById(Integer.parseInt(textIdProd.getText()), textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
-        //    showProducts();
-          //  PageStockController.fillOutOfStockLabel();
-          //  clearFields();
-     //   }
- //   }
+    @FXML
+   public void updateProductPerformed(ActionEvent actionEvent) {
+       if(tester != 0){
+           ProductDaoImpl.updateProductById(Integer.parseInt(textIdProd.getText()), textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
+           showProducts();
+           fillOutOfStockLabel();
+           clearFields();
+        }
+    }
 
-   // @FXML
-  //  public void deleteProductPerformed(ActionEvent actionEvent) {
-    //    if(tester != 0){
-      //      ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProd.getText()));
-        //    showProducts();
-          //  PageStockController.fillOutOfStockLabel();
-          //  clearFields();
-          //  tester --;
-      //  }
- //   }
+    @FXML
+   public void deleteProductPerformed(ActionEvent actionEvent) {
+        if(tester != 0){
+            ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProd.getText()));
+            showProducts();
+            fillOutOfStockLabel();
+            clearFields();
+           tester --;
+        }
+    }
 
- //   @FXML
-  //  public void clearFields(ActionEvent actionEvent) {
-   //     clearFields();
-  //  }
-
-
-
-  //  public void showProducts(){
-    //    ObservableList<Product> productsList = ProductDaoImpl.getProducts();
-      //  tableProducts.setItems(productsList);
-    //    colIdProd.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Id_product"));
-      //  colNameProd.setCellValueFactory(new PropertyValueFactory<Product, String>("Product_name"));
-      //  colQty.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Quantity"));
-     //   colPrice.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Price"));
-     //   colExpDate.setCellValueFactory(new PropertyValueFactory<Product, String>("Exp_date"));
-  //  }
-
-
-  //  @FXML
-  //  public void showProductsById(ActionEvent actionEvent){
-    //    ObservableList<Product> productsList = ProductDaoImpl.getProductsById(Integer.parseInt(textIdProd.getText()));
-      //  tableProducts.setItems(productsList);
-      //  colIdProd.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Id_product"));
-       // colNameProd.setCellValueFactory(new PropertyValueFactory<Product, String>("Product_name"));
-       // colQty.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Quantity"));
-      //  colPrice.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Price"));
-       // colExpDate.setCellValueFactory(new PropertyValueFactory<Product, String>("Exp_date"));
-   // }
+    @FXML
+    public void clearFields(ActionEvent actionEvent) {
+        clearFields();
+    }
 
 
 
-  //  @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-  //      showProducts();
-   // }
+    public void showProducts(){
+        ObservableList<Product> productsList = ProductDaoImpl.getProducts();
+        tableProducts.setItems(productsList);
+       colIdProd.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));
+        colNameProd.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
+       colQty.setCellValueFactory(new PropertyValueFactory<Product, Integer>("qty"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
+       colExpDate.setCellValueFactory(new PropertyValueFactory<Product, String>("expDate"));
+    }
 
 
-   // public void clearFields(){
-     //   textNameProd.setText(null);
-      //  textQty.setText(null);
-      //  textPrice.setText(null);
-      //  textExpDate.setText(null);
+    @FXML
+   public void showProductsById(ActionEvent actionEvent){
+       ObservableList<Product> productsList = ProductDaoImpl.getProductsById(Integer.parseInt(textIdProd.getText()));
+        tableProducts.setItems(productsList);
+        colIdProd.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));
+        colNameProd.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
+        colQty.setCellValueFactory(new PropertyValueFactory<Product, Integer>("qty"));
+       colPrice.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
+        colExpDate.setCellValueFactory(new PropertyValueFactory<Product, String>("expDate"));
+    }
 
 
-  //  }
+
+
+   public void initialize(URL url, ResourceBundle resourceBundle) {
+        showProducts();
+        fillTotalLabel();
+        fillTotalLabel();
+    }
+
+
+   public void clearFields(){
+       textNameProd.setText(null);
+        textQty.setText(null);
+        textPrice.setText(null);
+        textExpDate.setText(null);
+
+
+    }
+
+
+
+
+    public void fillOutOfStockLabel() {
+        int outOfStockVAR = ProductDaoImpl.outOfStock();
+        outOfStockLabel.setText(String.valueOf(outOfStockVAR));
+    }
+
+    public void fillTotalLabel() {
+        int totalVAR = ProductDaoImpl.totalUnits();
+        totalLabel.setText(String.valueOf(totalVAR));
+    }
 }
