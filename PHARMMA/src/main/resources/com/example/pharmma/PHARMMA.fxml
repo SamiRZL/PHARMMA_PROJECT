@@ -184,7 +184,7 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></TextField>
-                  <Button layoutX="41.0" layoutY="105.0" mnemonicParsing="false" onAction="#addAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f38484;">
+                  <Button layoutX="41.0" layoutY="105.0" mnemonicParsing="false" onAction="#deleteAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f38484;">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -194,6 +194,11 @@
                         <Image url="@../../../icons/delete.png" />
                      </image>
                   </ImageView>
+                  <Button layoutX="51.0" layoutY="115.0" mnemonicParsing="false" onAction="#deleteAccountPerformed" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: f38484;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
             <Pane layoutX="370.0" layoutY="38.0" prefHeight="68.0" prefWidth="320.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
