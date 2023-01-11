@@ -48,6 +48,8 @@ public  class PageLoginController implements Initializable {
     private Button loginBtn = new Button("Login");
 
 
+
+
     //ISMAIL HNA ZID kemel DECLARI LES VIEWS LI TES7A9HOM,
     //.
     //.
@@ -79,7 +81,8 @@ public  class PageLoginController implements Initializable {
 
 
             if (jobAccount == "vendor") {
-                set
+                PageDashboardController.switchToProfileBtn.setDisable(true);
+
 
             }
 

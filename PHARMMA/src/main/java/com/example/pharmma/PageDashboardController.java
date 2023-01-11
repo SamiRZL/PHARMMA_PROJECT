@@ -1,10 +1,12 @@
 package com.example.pharmma;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +15,12 @@ public class PageDashboardController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private Button switchToStockBtn;
+
+    @FXML
+    static Button switchToProfileBtn;
 
 
     public void switchToProfile(ActionEvent event) throws IOException {

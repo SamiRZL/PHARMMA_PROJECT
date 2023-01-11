@@ -74,7 +74,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToSTOCK" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Stock" textFill="WHITE">
+                <Button fx:id="switchToStockBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToSTOCK" prefHeight="68.0" prefWidth="247.0" stylesheets="" text="Stock" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -89,7 +89,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="68.0" prefWidth="247.0" style="-fx-background-radius: 30;" stylesheets="" text="Profile" textFill="WHITE">
+                <Button fx:id="switchToProfileBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToProfile" prefHeight="68.0" prefWidth="247.0" style="-fx-background-radius: 30;" stylesheets="" text="Profile" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                             <image>
