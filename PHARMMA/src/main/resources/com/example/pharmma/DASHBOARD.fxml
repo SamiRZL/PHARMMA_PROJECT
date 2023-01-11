@@ -2,6 +2,9 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -104,5 +107,128 @@
                     </padding>
                 </Button>
             </children></VBox>
+      <Pane layoutX="271.0" layoutY="84.0" prefHeight="286.0" prefWidth="655.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+         <children>
+            <ImageView fitHeight="246.0" fitWidth="205.0" layoutX="9.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Board1.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="20.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="35.0" fitWidth="22.0" layoutX="157.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/ready-stock.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="20.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products Available in Stock">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Label layoutX="45.0" layoutY="197.0" text="145" textFill="#252525">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="109.0" fitWidth="151.0" layoutX="12.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/undraw_Order_delivered_re_v4ab.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="246.0" fitWidth="205.0" layoutX="229.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Board2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="248.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clients">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="19.0" fitWidth="22.0" layoutX="381.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/client.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="264.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Clients Registered">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Label layoutX="257.0" layoutY="197.0" text="13" textFill="#252525">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="145.0" fitWidth="205.0" layoutX="222.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/undraw_About_me_re_82bv.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="246.0" fitWidth="205.0" layoutX="447.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/Board3.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="460.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="35.0" fitWidth="22.0" layoutX="595.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/income.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="488.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Monthly Income">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+            <Label layoutX="475.0" layoutY="207.0" text="78000 DA" textFill="#515151">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="120.0" fitWidth="161.0" layoutX="462.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/undraw_Savings_re_eq4w-(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fill="#b2b2b2" layoutX="276.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt; Dashboard">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="317.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToSTOCK" prefHeight="25.0" prefWidth="112.0" text="Move To Stock" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="543.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToClients" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #515151;" text="Clients List" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="751.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToFinances" prefHeight="25.0" prefWidth="118.0" text="Income Feedback" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TableView layoutX="276.0" layoutY="413.0" prefHeight="230.0" prefWidth="645.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;">
+        <columns>
+          <TableColumn prefWidth="126.0" style="-fx-background-color: #FFFFFF;" text="ID" />
+            <TableColumn prefWidth="126.0" style="-fx-background-color: #FFFFFF;" text="NAME" />
+            <TableColumn prefWidth="126.0" style="-fx-background-color: #FFFFFF;" text="QTY" />
+            <TableColumn prefWidth="126.0" style="-fx-background-color: #FFFFFF;" text="PRICE" />
+            <TableColumn prefWidth="140.0" style="-fx-background-color: #FFFFFF;" text="EXP DATE" />
+        </columns>
+      </TableView>
     </children>
 </AnchorPane>
