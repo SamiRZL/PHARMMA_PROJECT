@@ -1,5 +1,6 @@
 package com.example.pharmma;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 
@@ -7,22 +8,26 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 public class ProductController implements Initializable{
 
 
 
-    @FXML
-   private TextField textIdProd;
+
 
     @FXML
     private TextField textNameProd;
@@ -30,11 +35,25 @@ public class ProductController implements Initializable{
     @FXML
     private TextField textQty;
 
+
+
+
+
+
     @FXML
     private TextField textPrice;
 
     @FXML
     private TextField textExpDate;
+
+    @FXML
+    private TextField textIdProdDelete;
+    @FXML
+    private TextField textIdProdUpdate;
+
+    @FXML
+    private TextField textIdProdSearch;
+
 
 
 
@@ -64,10 +83,9 @@ public class ProductController implements Initializable{
     private Label outOfStockLabel;
 
     @FXML
-    private Label unitsLabel;
+    private Label totalStock  ;
 
-    @FXML
-    private Label totalLabel;
+
 
     private int tester = 0;
 
@@ -77,6 +95,42 @@ public class ProductController implements Initializable{
 
     @FXML
     private Button btnUpdate;
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+
+
+    @FXML
+    public void switchToDashboard(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("DASHBOARD.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToClients(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Clients.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToFinances(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Finances.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToProfile(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("PHARMMA.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void tester(){
         if (tester == 0){
@@ -89,33 +143,32 @@ public class ProductController implements Initializable{
        ProductDaoImpl.addProduct(textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
         showProducts();
         clearFields();
-       fillOutOfStockLabel();
+       //fillOutOfStockLabel();
         tester ++;
     }
 
     @FXML
    public void updateProductPerformed(ActionEvent actionEvent) {
-           ProductDaoImpl.updateProductById(Integer.parseInt(textIdProd.getText()), textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
+           ProductDaoImpl.updateProductById(Integer.parseInt(textIdProdUpdate.getText()), textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
            showProducts();
-           fillOutOfStockLabel();
+          // fillOutOfStockLabel();
            clearFields();
 
    }
 
     @FXML
   public void deleteProductPerformed(ActionEvent actionEvent) {
-          ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProd.getText()));
+          ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProdDelete.getText()));
             showProducts();
-           fillOutOfStockLabel();
+        outOfStockLabel.setText(String.valueOf(ProductDaoImpl.totalUnits()));
+
+        // fillOutOfStockLabel();
             clearFields();
            tester --;
 
     }
 
-    @FXML
-    public void clearFields(ActionEvent actionEvent) {
-        clearFields();
-    }
+
 
 
 
@@ -132,7 +185,7 @@ public class ProductController implements Initializable{
 
    @FXML
    public void showProductsById(ActionEvent actionEvent){
-     ObservableList<Product> productsList = ProductDaoImpl.getProductsById(Integer.parseInt(textIdProd.getText()));
+     ObservableList<Product> productsList = ProductDaoImpl.getProductsById(Integer.parseInt(textIdProdSearch.getText()));
         tableProducts.setItems(productsList);
         colIdProd.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));
         colNameProd.setCellValueFactory(new PropertyValueFactory<Product, String>("name"));
@@ -146,9 +199,9 @@ public class ProductController implements Initializable{
 
    public void initialize(URL url, ResourceBundle resourceBundle) {
         showProducts();
-        fillTotalLabel();
-        fillTotalLabel();
-        tester();
+       //totalStock.setText(String.valueOf(ProductDaoImpl.totalUnits()));
+       // fillOutOfStockLabel();
+        //tester();
     }
 
 
@@ -164,13 +217,14 @@ public class ProductController implements Initializable{
 
 
 
-    public void fillOutOfStockLabel() {
-        int outOfStockVAR = ProductDaoImpl.outOfStock();
-       outOfStockLabel.setText(String.valueOf(outOfStockVAR));
-    }
+    //public void fillOutOfStockLabel() {
+//        int outOfStockVAR = ProductDaoImpl.outOfStock();
+  //     outOfStockLabel.setText(String.valueOf(outOfStockVAR));
+    //}
 
-    public void fillTotalLabel() {
-        int totalVAR = ProductDaoImpl.totalUnits();
-       totalLabel.setText(String.valueOf(totalVAR));
-    }
+  //public void fillTotalLabel() {
+       // int totalVAR = ProductDaoImpl.totalUnits();
+       // totalStock.setText(String.valueOf(totalVAR));
+
+   // }
 }

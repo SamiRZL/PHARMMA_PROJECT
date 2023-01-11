@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -18,6 +19,7 @@ import javax.swing.SwingUtilities;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.EventObject;
 import java.util.ResourceBundle;
 
 
@@ -63,16 +65,34 @@ public  class PageLoginController implements Initializable {
     private Parent root;
 
     @FXML
-    public void loginBtnClicked(ActionEvent actionEvent) {
+    public void loginBtnClicked(ActionEvent actionEvent) throws IOException {
         if (PageLogin.login(edtUsername.getText(), edtPassword.getText())) {
+        root = FXMLLoader.load(getClass().getResource("DASHBOARD.fxml"));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+
+
+
 
             if (jobAccount == "vendor") {
+                set
+
+            }
 
 
-                //ClientController.profileBtn.setDisable(true);
+
 
 
             }else{
+
+            errorLabel.setText("Username or password entered is incorrect");
+            edtUsername.setText(null);
+            edtPassword.setText(null);
+        }
 
 
             }
@@ -81,15 +101,13 @@ public  class PageLoginController implements Initializable {
 
 
 
-        } else {
-            errorLabel.setText("Username or password entered is incorrect");
-            edtUsername.setText(null);
-            edtPassword.setText(null);
-        }
+       // } else {
+         //
+      //  }
 
-    }
+  //  }
 
-    @Override
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }

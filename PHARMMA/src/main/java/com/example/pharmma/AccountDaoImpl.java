@@ -70,31 +70,7 @@ public class AccountDaoImpl extends Account {
     }
 
 
-    public static ObservableList<Account> displayUpdateById(int id){
-        ObservableList<Account> accountUpdatedTab = FXCollections.observableArrayList();
 
-        String query = "select * from account where Id_account = ?";
-        try {
-            statement = con.prepareStatement(query);
-            statement.setInt(1, id);
-            resultSet = statement.executeQuery();
-
-            while (resultSet.next()){
-                int idAcc = resultSet.getInt("Id_account");
-                String  name = resultSet.getString("Name");
-                String lastname = resultSet.getString("LastName");
-                String job = resultSet.getString("Job");
-                String username = resultSet.getString("Username");
-                String password = resultSet.getString("Password");
-                Account accUp = new Account(idAcc, name, lastname, job, username, password);
-                accountUpdatedTab.add(accUp);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return accountUpdatedTab;
-    }
 
 
 

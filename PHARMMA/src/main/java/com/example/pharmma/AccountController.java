@@ -25,6 +25,10 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
@@ -125,6 +129,9 @@ public class AccountController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    static Connection con = DBconnection.createDBconnection();
+    static PreparedStatement statement = null;
+    static ResultSet resultSet = null;
 
 
     @FXML
@@ -132,8 +139,9 @@ public class AccountController implements Initializable {
 
         AccountDaoImpl.addAccount(textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
         clearFields();
-        showAccounts();
         tester++;
+        showAccounts();
+
 
 
     }
@@ -153,16 +161,47 @@ public class AccountController implements Initializable {
    public void tester(){
         if (tester == 0){
            btnDelete.setDisable(true);
+           btnUpdate.setDisable(true);
        }
     }
 
 
 
-   @FXML
-   public void updateClicked(ActionEvent actionEvent){
-       ObservableList<Account> accountUpdateList = AccountDaoImpl.displayUpdateById(Integer.parseInt(textIdAccUpdate.getText()));
-       
 
+
+    @FXML
+    public void updateClicked(ActionEvent actionEvent){
+        updateFuncClicked(Integer.parseInt(textIdAccUpdate.getText()));
+    }
+
+    public void updateFuncClicked(int id){
+       String query="select Name, LastName, Job, Username, Password from account where Id_account = ?";
+
+       try {
+
+           statement = con.prepareStatement(query);
+           statement.setInt(1, id);
+           resultSet = statement.executeQuery(query);
+           if(resultSet.next()){
+               textNameAcc.setText(resultSet.getString("Name"));
+               textLastNameAcc.setText(resultSet.getString("LastName"));
+               textJob.setText(resultSet.getString("Job"));
+               textUsername.setText(resultSet.getString("Username"));
+               textPassword.setText(resultSet.getString("Password"));
+
+
+
+           }else{
+               textNameAcc.setText("Id NOT FOUND");
+               textLastNameAcc.setText("Id NOT FOUND");
+               textJob.setText("Id NOT FOUND");
+               textUsername.setText("Id NOT FOUND");
+               textPassword.setText("Id NOT FOUND");
+           }
+
+       } catch (SQLException e) {
+           throw new RuntimeException(e);
+       }
 
 
    }
@@ -215,7 +254,7 @@ public class AccountController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showAccounts();
-        tester();
+        //tester();
 
 
     }

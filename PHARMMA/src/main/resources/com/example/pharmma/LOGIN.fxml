@@ -20,18 +20,18 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Text>
-            <Text fx:id="usernameLab" fill="#b2b2b2" layoutX="52.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+            <Text fill="#b2b2b2" layoutX="52.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Text>
             <TextField fx:id="edtPassword" layoutX="52.0" layoutY="319.0" prefHeight="44.0" prefWidth="288.0" style="-fx-background-radius: 30;" />
-            <Text fx:id="passwordLab" fill="#b2b2b2" layoutX="52.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="67.857421875">
+            <Text fill="#b2b2b2" layoutX="52.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="67.857421875">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Text>
-            <Button fx:id="loginBtn" layoutX="127.0" layoutY="405.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" styleClass="button2" stylesheets="@../../../css/style.css" text="Login" textFill="WHITE">
+            <Button fx:id="loginBtn" layoutX="127.0" layoutY="405.0" mnemonicParsing="false" onAction="#loginBtnClicked" prefHeight="35.0" prefWidth="126.0" styleClass="button2" stylesheets="@../../../css/style.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

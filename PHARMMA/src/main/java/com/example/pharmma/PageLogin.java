@@ -18,7 +18,7 @@ public class PageLogin extends javax.swing.JFrame{
         try {
             statement = con.prepareStatement(query);
             ResultSet rs = statement.executeQuery(query);
-            jobAccount = resultSet.getString("job");
+            //jobAccount = resultSet.getString("job");
             return rs.next();
         } catch (SQLException e) {
             throw new RuntimeException(e);
