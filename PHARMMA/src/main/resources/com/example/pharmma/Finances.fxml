@@ -208,12 +208,12 @@
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Text>
-                <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="22" textFill="#747575">
+                <Label fx:id="txtSales" layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="12" textFill="#747575">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>
                 </Label>
-                <Text fill="#b2b2b2" layoutX="69.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+23% From last month" wrappingWidth="192.0">
+                <Text fill="#b2b2b2" layoutX="29.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+23% From last month" wrappingWidth="192.0">
                     <font>
                         <Font name="System Bold" size="9.0" />
                     </font>

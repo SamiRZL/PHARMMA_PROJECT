@@ -85,6 +85,9 @@ public class SalesController implements Initializable {
     @FXML
     private Button btnUpdate;
 
+    @FXML
+    private Label txtSales;
+
 
 
 
@@ -99,6 +102,7 @@ public class SalesController implements Initializable {
         showSales();
         clearFields();
         fillTotalSales();
+        txtSales.setText(String.valueOf(SalesDaoImpl.totalUnites()));
         tester++;
     }
 
@@ -109,10 +113,8 @@ public class SalesController implements Initializable {
             SalesDaoImpl.deleteSalesById(Integer.parseInt(textIdSaleDelete.getText()));
             textIdSaleDelete.setText(null);
             showSales();
-
+            txtSales.setText(String.valueOf(SalesDaoImpl.totalUnites()));
             fillTotalSales();
-
-            tester--;
 
     }
 
@@ -141,7 +143,7 @@ public class SalesController implements Initializable {
         colTotal.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("total"));
         colDate.setCellValueFactory(new PropertyValueFactory<Sales, String>("date"));
 
-        textIdSaleSearch.setText(" ");
+        textIdSaleSearch.setText(null);
     }
 
 
@@ -152,6 +154,7 @@ public class SalesController implements Initializable {
         showSales();
         try {
             fillTotalSales();
+            txtSales.setText(String.valueOf(SalesDaoImpl.totalUnites()));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -168,6 +171,7 @@ public class SalesController implements Initializable {
 
     public  void fillTotalSales() throws SQLException {
         totalGainsLabel.setText(String.valueOf(SalesDaoImpl.totalGain()));
+
 
     }
     public void switchToDashboard(ActionEvent event) throws IOException {

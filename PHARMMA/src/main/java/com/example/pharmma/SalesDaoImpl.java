@@ -135,6 +135,30 @@ public class SalesDaoImpl extends Sales {
         }
 
     }
+
+    public static int totalUnites() {
+        String query = "select Unites from sales ";
+
+
+        try {
+            statement = con.prepareStatement(query);
+            ResultSet rs = statement.executeQuery(query);
+            int sumUnt = 0;
+
+            while (rs.next()) {
+
+                sumUnt = sumUnt + rs.getInt("Unites");
+
+            }
+
+            return sumUnt;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }
 
 

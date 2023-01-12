@@ -41,7 +41,7 @@ public class ProductDaoImpl extends Product{
     }
 
 
-    static int outOfStockCpt = 0;
+
 
     public static int outOfStock() {
         String query = "select Quantity from product ";
@@ -50,7 +50,7 @@ public class ProductDaoImpl extends Product{
         try {
             statement = con.prepareStatement(query);
             ResultSet rs = statement.executeQuery(query);
-            rs.next();
+             int outOfStockCpt = 0;
 
             while (rs.next()) {
 
