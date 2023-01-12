@@ -14,8 +14,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class PageDashboardController implements Initializable {
@@ -40,6 +42,15 @@ public class PageDashboardController implements Initializable {
     @FXML
     private TableColumn<Product, String> colExpDate;
 
+   /* @FXML
+    private Label totalClts;
+
+
+    @FXML
+    private Label totalGainsLabel;
+
+    */
+
 
     @FXML
     private Button switchToStockBtn;
@@ -47,38 +58,40 @@ public class PageDashboardController implements Initializable {
     @FXML
     private Button switchToProfileBtn;
 
-    //private String jobAccount = PageLogin.getJob1(PageLoginController.usernameSavedFunc());
-
 
     public void switchToProfile(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("PHARMMA.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchToClients(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Clients.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchToFinances(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Finances.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchToSTOCK(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("STOCK.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void showProducts(){
+
+    public void showProducts() {
         ObservableList<Product> productsList = ProductDaoImpl.getProducts();
         tableProducts.setItems(productsList);
         colIdProd.setCellValueFactory(new PropertyValueFactory<Product, Integer>("id"));
@@ -91,12 +104,17 @@ public class PageDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-       /* if (jobAccount == "vendor") {
-            switchToProfileBtn.setDisable(true);
-        }
-
-        */
         showProducts();
+      /*  try {
+            totalGainsLabel.setText(String.valueOf(SalesDaoImpl.totalGain()));
+
+           // ClientController.fillLabelClt();
+            //ProductDaoImpl.totalUnits();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+       */
     }
 }

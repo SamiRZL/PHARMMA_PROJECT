@@ -50,6 +50,7 @@ public class ProductDaoImpl extends Product{
         try {
             statement = con.prepareStatement(query);
             ResultSet rs = statement.executeQuery(query);
+            rs.next();
 
             while (rs.next()) {
 

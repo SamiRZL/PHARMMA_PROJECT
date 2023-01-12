@@ -11,16 +11,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class SalesController implements Initializable {
 
@@ -32,6 +30,9 @@ public class SalesController implements Initializable {
 
     @FXML
     private  TextField textIdSaleSearch;
+
+    @FXML
+    private   Label totalGainsLabel;
 
 
 
@@ -90,27 +91,27 @@ public class SalesController implements Initializable {
 
 
 
-    public void tester(){
-        if (tester == 0){
-            btnDelete.setDisable(true);
-        }
-    }
+
 
     @FXML
-    public void addSalesPerformed(ActionEvent actionEvent) {
+    public void addSalesPerformed(ActionEvent actionEvent) throws SQLException {
         SalesDaoImpl.addSales(textNameSale.getText(), Integer.parseInt(textUnites.getText()), Integer.parseInt(textTotal.getText()), textDate.getText());
         showSales();
         clearFields();
+        fillTotalSales();
         tester++;
     }
 
 
 
     @FXML
-    public void deleteSalesPerformed(ActionEvent actionEvent) {
+    public void deleteSalesPerformed(ActionEvent actionEvent) throws SQLException {
             SalesDaoImpl.deleteSalesById(Integer.parseInt(textIdSaleDelete.getText()));
+            textIdSaleDelete.setText(null);
             showSales();
-            clearFields();
+
+            fillTotalSales();
+
             tester--;
 
     }
@@ -139,13 +140,21 @@ public class SalesController implements Initializable {
         colUnites.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("unites"));
         colTotal.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("total"));
         colDate.setCellValueFactory(new PropertyValueFactory<Sales, String>("date"));
+
+        textIdSaleSearch.setText(" ");
     }
 
 
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         showSales();
+        try {
+            fillTotalSales();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -154,7 +163,11 @@ public class SalesController implements Initializable {
         textUnites.setText(null);
         textTotal.setText(null);
         textDate.setText(null);
+    }
 
+
+    public  void fillTotalSales() throws SQLException {
+        totalGainsLabel.setText(String.valueOf(SalesDaoImpl.totalGain()));
 
     }
     public void switchToDashboard(ActionEvent event) throws IOException {

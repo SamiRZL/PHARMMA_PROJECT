@@ -15,6 +15,33 @@ public class ClientDaoImpl extends Client {
     static ResultSet resultSet = null;
 
 
+
+
+
+
+
+
+    public static int nbrOfClients() {
+        String query = "select * from client ";
+
+
+        try {
+            statement = con.prepareStatement(query);
+            ResultSet rs = statement.executeQuery(query);
+             int cpt = 0;
+
+            while (rs.next()) {
+                cpt++;
+            }
+
+            return cpt;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     public static ObservableList<Client> getClients() {
         ObservableList<Client> clientTab = FXCollections.observableArrayList();
 

@@ -11,10 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -74,6 +71,9 @@ public class ClientController implements Initializable {
     @FXML
     private TableColumn<Client, Integer> colPhoneNbr;
 
+    @FXML
+    private  Label totalClts;
+
 
 
     private int tester = 0;
@@ -132,7 +132,7 @@ public class ClientController implements Initializable {
         ClientDaoImpl.addClient(textName.getText(), textLastName.getText(), Integer.parseInt(textAge.getText()), Integer.parseInt(textPhoneNbr.getText()));
         showClients();
         clearFields();
-        tester++;
+        fillLabelClt();
     }
 
     @FXML
@@ -148,6 +148,7 @@ public class ClientController implements Initializable {
             ClientDaoImpl.deleteClientById(Integer.parseInt(textIdCltDelete.getText()));
             showClients();
             clearFields();
+            fillLabelClt();
            tester --;
 
     }
@@ -182,6 +183,12 @@ public class ClientController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         showClients();
+        fillLabelClt();
+    }
+
+    public  void fillLabelClt(){
+        totalClts.setText(String.valueOf(ClientDaoImpl.nbrOfClients()));
+
     }
 
 

@@ -132,18 +132,14 @@ public class ProductController implements Initializable{
         stage.show();
     }
 
-    public void tester(){
-        if (tester == 0){
-            btnDelete.setDisable(true);
-        }
-    }
+
 
     @FXML
     public void addProductPerformed(ActionEvent actionEvent) {
        ProductDaoImpl.addProduct(textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
         showProducts();
         clearFields();
-       //fillOutOfStockLabel();
+        fillOutOfStockLabel();
         tester ++;
     }
 
@@ -160,11 +156,10 @@ public class ProductController implements Initializable{
   public void deleteProductPerformed(ActionEvent actionEvent) {
           ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProdDelete.getText()));
             showProducts();
-        outOfStockLabel.setText(String.valueOf(ProductDaoImpl.outOfStock()));
-
-        // fillOutOfStockLabel();
+            outOfStockLabel.setText(String.valueOf(ProductDaoImpl.outOfStock()));
+            fillOutOfStockLabel();
             clearFields();
-           tester --;
+            tester --;
 
     }
 
@@ -199,10 +194,8 @@ public class ProductController implements Initializable{
 
    public void initialize(URL url, ResourceBundle resourceBundle) {
         showProducts();
-       //totalStock.setText(String.valueOf(ProductDaoImpl.totalUnits()));
-      // outOfStockLabel.setText(String.valueOf(new ProductDaoImpl().outOfStock()));
-
-        //tester();
+        totalStock.setText(String.valueOf(ProductDaoImpl.totalUnits()));
+        outOfStockLabel.setText(String.valueOf(new ProductDaoImpl().outOfStock()));
     }
 
 
@@ -218,14 +211,16 @@ public class ProductController implements Initializable{
 
 
 
-    //public void fillOutOfStockLabel() {
-//        int outOfStockVAR = ProductDaoImpl.outOfStock();
-  //     outOfStockLabel.setText(String.valueOf(outOfStockVAR));
-    //}
+    public void fillOutOfStockLabel() {
+        int outOfStockVAR = ProductDaoImpl.outOfStock();
+       outOfStockLabel.setText(String.valueOf(outOfStockVAR));
+    }
 
-  //public void fillTotalLabel() {
-    //    int totalVAR = ProductDaoImpl.totalUnits();
-      //  totalStock.setText(String.valueOf(totalVAR));
+  public void fillTotalLabel() {
+        int totalVAR = ProductDaoImpl.totalUnits();
+        totalStock.setText(String.valueOf(totalVAR));
 
-   // }
+    }
+
+
 }
