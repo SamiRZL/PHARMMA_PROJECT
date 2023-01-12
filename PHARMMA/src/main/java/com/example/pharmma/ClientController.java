@@ -181,7 +181,7 @@ public class ClientController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showClients(); tester();
+        showClients();
     }
 
 

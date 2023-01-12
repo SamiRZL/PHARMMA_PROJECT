@@ -219,7 +219,7 @@
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Text>
-                <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="13" textFill="#747575">
+                <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="4" textFill="#747575">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>

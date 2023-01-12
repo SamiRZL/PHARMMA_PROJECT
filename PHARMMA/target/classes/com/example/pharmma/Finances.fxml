@@ -186,7 +186,7 @@
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
-                        <Button layoutX="279.0" layoutY="22.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="7.0" style="-fx-background-color: f38484;">
+                        <Button layoutX="279.0" layoutY="22.0" mnemonicParsing="false" onAction="#showSales" prefHeight="19.0" prefWidth="7.0" style="-fx-background-color: f38484;">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -208,7 +208,7 @@
                         <Font name="System Bold" size="16.0" />
                     </font>
                 </Text>
-                <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="92" textFill="#747575">
+                <Label layoutX="29.0" layoutY="235.0" prefHeight="49.0" prefWidth="155.0" text="22" textFill="#747575">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>
@@ -233,7 +233,7 @@
                         <Font name="System Bold" size="13.0" />
                     </font>
                 </Text>
-                <Label layoutX="28.0" layoutY="348.0" prefHeight="49.0" prefWidth="155.0" text="14122 DA" textFill="#fbf4f9">
+                <Label layoutX="28.0" layoutY="348.0" prefHeight="49.0" prefWidth="155.0" text="9500 DA" textFill="#fbf4f9">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>

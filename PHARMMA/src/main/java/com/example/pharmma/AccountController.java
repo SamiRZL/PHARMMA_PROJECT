@@ -62,6 +62,7 @@ public class AccountController implements Initializable {
     @FXML
     private  TextField textJob;
 
+
     @FXML
     private  TextField textUsername;
 
@@ -169,18 +170,16 @@ public class AccountController implements Initializable {
 
 
 
-    @FXML
-    public void updateClicked(ActionEvent actionEvent){
-        updateFuncClicked(Integer.parseInt(textIdAccUpdate.getText()));
-    }
 
-    public void updateFuncClicked(int id){
-       String query="select Name, LastName, Job, Username, Password from account where Id_account = ?";
+
+
+
+    public void updateFuncClicked(ActionEvent event){
+       String query="select Name, LastName, Job, Username, Password from account where Id_account = '"+textIdAccUpdate.getText()+"'";
 
        try {
 
            statement = con.prepareStatement(query);
-           statement.setInt(1, id);
            resultSet = statement.executeQuery(query);
            if(resultSet.next()){
                textNameAcc.setText(resultSet.getString("Name"));
@@ -199,8 +198,9 @@ public class AccountController implements Initializable {
                textPassword.setText("Id NOT FOUND");
            }
 
+
        } catch (SQLException e) {
-           throw new RuntimeException(e);
+           e.printStackTrace();
        }
 
 
@@ -210,11 +210,29 @@ public class AccountController implements Initializable {
 
     @FXML
     public void updateSavedPerformed(ActionEvent actionEvent) {
-            AccountDaoImpl.updateAccountById(Integer.parseInt(textIdAccUpdate.getText()),textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText());
+        String query = "update account set Name = ?, LastName = ?, Job = ?, Username = ?, Password = ?, where Id_account ='"+textIdAccUpdate.getText()+"'";
+        try {
+              PreparedStatement statement = con.prepareStatement(query);
+
+            statement.setString(1,textNameAcc.getText());
+            statement.setString(2,textLastNameAcc.getText());
+            statement.setString(3,textJob.getText());
+            statement.setString(4,textUsername.getText());
+            statement.setString(5,textPassword.getText());
+            statement.executeUpdate();
             showAccounts();
             clearFields();
 
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
     }
+
+
 
     @FXML
     public void deleteAccountPerformed(ActionEvent actionEvent) {

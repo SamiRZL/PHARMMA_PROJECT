@@ -97,20 +97,7 @@ public class AccountDaoImpl extends Account {
 
     public static void updateAccountById(int id, String name, String lastname, String job, String username, String password){
 
-        String query = "update account set Name = ?, LastName = ?, Job = ?, Username = ?, Password = ?, where Id_account = ?";
-        try {
-            PreparedStatement  statement = con.prepareStatement(query);
 
-            statement.setString(1, name);
-            statement.setString(2, lastname);
-            statement.setString(3, job);
-            statement.setString(4, username);
-            statement.setString(5, password);
-            statement.setInt(6, id);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 

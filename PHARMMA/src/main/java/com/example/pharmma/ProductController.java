@@ -160,7 +160,7 @@ public class ProductController implements Initializable{
   public void deleteProductPerformed(ActionEvent actionEvent) {
           ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProdDelete.getText()));
             showProducts();
-        outOfStockLabel.setText(String.valueOf(ProductDaoImpl.totalUnits()));
+        outOfStockLabel.setText(String.valueOf(ProductDaoImpl.outOfStock()));
 
         // fillOutOfStockLabel();
             clearFields();
@@ -200,7 +200,8 @@ public class ProductController implements Initializable{
    public void initialize(URL url, ResourceBundle resourceBundle) {
         showProducts();
        //totalStock.setText(String.valueOf(ProductDaoImpl.totalUnits()));
-       // fillOutOfStockLabel();
+      // outOfStockLabel.setText(String.valueOf(new ProductDaoImpl().outOfStock()));
+
         //tester();
     }
 
@@ -223,8 +224,8 @@ public class ProductController implements Initializable{
     //}
 
   //public void fillTotalLabel() {
-       // int totalVAR = ProductDaoImpl.totalUnits();
-       // totalStock.setText(String.valueOf(totalVAR));
+    //    int totalVAR = ProductDaoImpl.totalUnits();
+      //  totalStock.setText(String.valueOf(totalVAR));
 
    // }
 }

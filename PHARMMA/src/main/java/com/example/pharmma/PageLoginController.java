@@ -23,7 +23,7 @@ import java.util.EventObject;
 import java.util.ResourceBundle;
 
 
-import static com.example.pharmma.PageLogin.jobAccount;
+
 import static javax.swing.JFrame.*;
 
 
@@ -37,28 +37,18 @@ public  class PageLoginController implements Initializable {
     private Label usernameLab = new Label("Username");
 
     @FXML
-    private TextField edtUsername = new TextField();
+    private  TextField edtUsername = new TextField();
 
     @FXML
     private Label passwordLab = new Label("Password");
     @FXML
-    private TextField edtPassword = new TextField();
+    private TextField edtPassword;
 
     @FXML
     private Button loginBtn = new Button("Login");
 
-
-
-
-    //ISMAIL HNA ZID kemel DECLARI LES VIEWS LI TES7A9HOM,
-    //.
-    //.
-    //.
-    //.
-    //.
-
-
-
+    @FXML
+    private TextField adminPass;
 
 
 
@@ -66,9 +56,50 @@ public  class PageLoginController implements Initializable {
     private Scene scene;
     private Parent root;
 
+
+
+
+
+
+
+
+    /*public static String usernameSavedFunc(){
+        edtUsername.getText();
+    }
+
+     */
+
+
+
+    @FXML
+    public Boolean adminTest(){
+        if (adminPass.getText() == "********"){
+            return true;
+
+        }else{
+            return false;
+        }
+    }
+
+    @FXML
+    public void submitLogin(ActionEvent event) throws IOException {
+     //   if (adminTest()==true){
+            root = FXMLLoader.load(getClass().getResource("DASHBOARD.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+      //  }
+
+    }
+
+
     @FXML
     public void loginBtnClicked(ActionEvent actionEvent) throws IOException {
-        if (PageLogin.login(edtUsername.getText(), edtPassword.getText())) {
+        if (PageLogin.login(edtUsername.getText(), edtPassword.getText())){
+           // usernameSavedFunc();
+
         root = FXMLLoader.load(getClass().getResource("DASHBOARD.fxml"));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -80,17 +111,14 @@ public  class PageLoginController implements Initializable {
 
 
 
-            if (jobAccount == "vendor") {
-                PageDashboardController.switchToProfileBtn.setDisable(true);
-
-
-            }
 
 
 
 
 
-            }else{
+
+
+            }else {
 
             errorLabel.setText("Username or password entered is incorrect");
             edtUsername.setText(null);

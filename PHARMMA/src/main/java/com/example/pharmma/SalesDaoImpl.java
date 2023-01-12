@@ -43,13 +43,13 @@ public class SalesDaoImpl extends Sales {
     }
 
 
-    public static ObservableList<Sales> getSalesById(int id){
+    public static ObservableList<Sales> getSalesByDate(String date){
         ObservableList<Sales> salesSearchedTab = FXCollections.observableArrayList();
 
-        String query = "select * from sales where Id_sales = ?";
+        String query = "select * from sales where Date = ?";
         try {
             statement = con.prepareStatement(query);
-            statement.setInt(1, id);
+            statement.setString(1, date);
             resultSet = statement.executeQuery();
             while (resultSet.next()){
                 int idSales = resultSet.getInt("Id_sales");
@@ -116,7 +116,7 @@ public class SalesDaoImpl extends Sales {
 
 
     public static void showSalesById(int id) {
-        String query = "select * from sales where Id_sales = ?";
+        String query = "select * from sales where Date = ?";
         try{
             statement = con.prepareStatement(query);
             statement.setInt(1, id);

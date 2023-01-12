@@ -51,12 +51,17 @@
                </image>
             </ImageView>
             <Text fill="#b2b2b2" layoutX="137.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login as an admin ?" />
-            <TextField layoutX="116.0" layoutY="478.0" promptText="    Enter Encryption Key" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" />
+            <TextField fx:id="adminPass" layoutX="116.0" layoutY="478.0" promptText="    Enter Encryption Key" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" />
             <Label fx:id="errorLabel" layoutX="98.0" layoutY="373.0" textFill="#ff0032">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <Button layoutX="163.0" layoutY="512.0" mnemonicParsing="false" onAction="#submitLogin" text="Submit" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

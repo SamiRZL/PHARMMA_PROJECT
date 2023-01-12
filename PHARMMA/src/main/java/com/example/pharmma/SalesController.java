@@ -132,7 +132,7 @@ public class SalesController implements Initializable {
 
     @FXML
     public void showSalesById(ActionEvent actionEvent){
-        ObservableList<Sales> salesList = SalesDaoImpl.getSalesById(Integer.parseInt(textIdSaleSearch.getText()));
+        ObservableList<Sales> salesList = SalesDaoImpl.getSalesByDate(textIdSaleSearch.getText());
         tableSales.setItems(salesList);
         colIdSale.setCellValueFactory(new PropertyValueFactory<Sales, Integer>("id"));
         colNameSale.setCellValueFactory(new PropertyValueFactory<Sales, String>("name"));
