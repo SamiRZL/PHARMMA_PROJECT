@@ -16,7 +16,6 @@ public class ProductDaoImpl extends Product{
 
 
 
-    static int units = 0;
 
     public static int totalUnits() {
         String query = "select Quantity from product ";
@@ -25,6 +24,8 @@ public class ProductDaoImpl extends Product{
         try {
             statement = con.prepareStatement(query);
             ResultSet rs = statement.executeQuery(query);
+             int units = 0;
+
 
             while (rs.next()) {
 

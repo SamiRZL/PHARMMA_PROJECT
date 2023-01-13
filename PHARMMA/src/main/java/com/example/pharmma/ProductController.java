@@ -17,11 +17,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 public class ProductController implements Initializable{
 
@@ -80,10 +82,10 @@ public class ProductController implements Initializable{
 
 
     @FXML
-    private Label outOfStockLabel;
+    private Text outOfStockLabel;
 
     @FXML
-    private Label totalStock  ;
+    private Text totalStock  ;
 
 
 
@@ -140,6 +142,7 @@ public class ProductController implements Initializable{
         showProducts();
         clearFields();
         fillOutOfStockLabel();
+        fillTotalLabel();
         tester ++;
     }
 
@@ -147,7 +150,8 @@ public class ProductController implements Initializable{
    public void updateProductPerformed(ActionEvent actionEvent) {
            ProductDaoImpl.updateProductById(Integer.parseInt(textIdProdUpdate.getText()), textNameProd.getText(), Integer.parseInt(textQty.getText()), Integer.parseInt(textPrice.getText()), textExpDate.getText());
            showProducts();
-          // fillOutOfStockLabel();
+           fillOutOfStockLabel();
+           fillTotalLabel();
            clearFields();
 
    }
@@ -156,11 +160,10 @@ public class ProductController implements Initializable{
   public void deleteProductPerformed(ActionEvent actionEvent) {
           ProductDaoImpl.deleteProductById(Integer.parseInt(textIdProdDelete.getText()));
             showProducts();
-            outOfStockLabel.setText(String.valueOf(ProductDaoImpl.outOfStock()));
+            fillTotalLabel();
+
             fillOutOfStockLabel();
             clearFields();
-            tester --;
-
     }
 
 
@@ -193,10 +196,11 @@ public class ProductController implements Initializable{
 
 
    public void initialize(URL url, ResourceBundle resourceBundle) {
-        showProducts();
-        totalStock.setText(String.valueOf(ProductDaoImpl.totalUnits()));
-        outOfStockLabel.setText(String.valueOf(new ProductDaoImpl().outOfStock()));
-    }
+       showProducts();
+       fillTotalLabel();
+       fillOutOfStockLabel();
+
+   }
 
 
    public void clearFields(){
@@ -212,15 +216,15 @@ public class ProductController implements Initializable{
 
 
     public void fillOutOfStockLabel() {
-        int outOfStockVAR = ProductDaoImpl.outOfStock();
-       outOfStockLabel.setText(String.valueOf(outOfStockVAR));
+       outOfStockLabel.setText(String.valueOf(ProductDaoImpl.outOfStock()));
     }
 
   public void fillTotalLabel() {
-        int totalVAR = ProductDaoImpl.totalUnits();
-        totalStock.setText(String.valueOf(totalVAR));
+        totalStock.setText(String.valueOf(ProductDaoImpl.totalUnits()));
 
     }
+
+
 
 
 }
