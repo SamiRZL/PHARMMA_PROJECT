@@ -191,11 +191,11 @@ public class AccountController implements Initializable {
 
 
            }else{
-               textNameAcc.setText("Id NOT FOUND");
-               textLastNameAcc.setText("Id NOT FOUND");
-               textJob.setText("Id NOT FOUND");
-               textUsername.setText("Id NOT FOUND");
-               textPassword.setText("Id NOT FOUND");
+               textNameAcc.setText("ID NOT FOUND");
+               textLastNameAcc.setText("ID NOT FOUND");
+               textJob.setText("ID NOT FOUND");
+               textUsername.setText("ID NOT FOUND");
+               textPassword.setText("ID NOT FOUND");
            }
 
 
@@ -210,27 +210,13 @@ public class AccountController implements Initializable {
 
     @FXML
     public void updateSavedPerformed(ActionEvent actionEvent) {
-        String query = "update account set Name = ?, LastName = ?, Job = ?, Username = ?, Password = ?, where Id_account ='"+textIdAccUpdate.getText()+"'";
-        try {
-              PreparedStatement statement = con.prepareStatement(query);
-
-            statement.setString(1,textNameAcc.getText());
-            statement.setString(2,textLastNameAcc.getText());
-            statement.setString(3,textJob.getText());
-            statement.setString(4,textUsername.getText());
-            statement.setString(5,textPassword.getText());
-            statement.executeUpdate();
-            showAccounts();
-            clearFields();
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-
+        AccountDaoImpl.updateAccountById( textNameAcc.getText(), textLastNameAcc.getText(), textJob.getText(), textUsername.getText(), textPassword.getText(), Integer.parseInt(textIdAccUpdate.getText()));
+        showAccounts();
+        clearFields();
+        textIdAccUpdate.setText(null);
     }
+
+
 
 
 
@@ -239,6 +225,7 @@ public class AccountController implements Initializable {
             AccountDaoImpl.deleteAccountById(Integer.parseInt(textIdAccDelete.getText()));
             showAccounts();
             clearFields();
+            textIdAccDelete.setText(null);
             tester--;
     }
 
@@ -253,6 +240,8 @@ public class AccountController implements Initializable {
         colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("job"));
         colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("username"));
         colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
+
+        textIdAccSearch.setText(null);
     }
 
     @FXML
@@ -265,6 +254,8 @@ public class AccountController implements Initializable {
         colJob.setCellValueFactory(new PropertyValueFactory<Account, String>("job"));
         colUsername.setCellValueFactory(new PropertyValueFactory<Account, String>("username"));
         colPassword.setCellValueFactory(new PropertyValueFactory<Account, String>("password"));
+
+        textIdAccSearch.setText(null);
     }
 
 
